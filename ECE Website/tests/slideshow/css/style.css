@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{ font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:13px; color:#fff; line-height:18px; padding:0px; margin:0px; background-image:url(../images/bgwood.jpg);}
+
+/* AdobeClean-Regular */
+@font-face {
+	font-family: 'Conv_AdobeClean-Regular'; 
+	src: url('../fonts/AdobeClean-Regular.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-Regular.woff') format('woff'), url('../fonts/AdobeClean-Regular.ttf') format('truetype'), url('../fonts/AdobeClean-Regular.svg') format('svg');
+}
+
+
+/* AdobeClean-Bold */
+@font-face {
+	font-family: 'AdobeClean-Bold';
+	src: url('../fonts/AdobeClean-Bold.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-Bold.woff') format('woff'), url('../fonts/AdobeClean-Bold.ttf') format('truetype'), url('../fonts/AdobeClean-Regular.svg') format('svg');
+}
+.adobecleanbold{ font-family:'AdobeClean-Bold',Sans-Serif; font-size:22px;}
+
+
+/* AdobeClean-BoldIt */
+@font-face {
+	font-family: 'Conv_AdobeClean-BoldIt';
+	src: url('../fonts/AdobeClean-BoldIt.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-BoldIt.woff') format('woff'), url('../fonts/AdobeClean-BoldIt.ttf') format('truetype'), url('../fonts/AdobeClean-BoldIt.svg') format('svg');
+}
+.adobecleanboldit{ font-family:'Conv_AdobeClean-BoldIt',Sans-Serif; font-size:22px;}
+
+
+
+/* AdobeClean-BoldSemiCn */
+@font-face {
+	font-family: 'Conv_AdobeClean-BoldSemiCn';
+	src: url('../fonts/AdobeClean-BoldSemiCn.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-BoldSemiCn.woff') format('woff'), url('../fonts/AdobeClean-BoldSemiCn.ttf') format('truetype'), url('../fonts/AdobeClean-BoldSemiCn.svg') format('svg');
+}
+.adobecleanboldsemicn{ font-family:'Conv_AdobeClean-BoldSemiCn',Sans-Serif; font-size:22px;}
+
+
+/* AdobeClean-BoldSemiCnIt */
+@font-face {
+	font-family: 'Conv_AdobeClean-BoldSemiCnIt';
+	src: url('../fonts/AdobeClean-BoldSemiCnIt.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-BoldSemiCnIt.woff') format('woff'), url('../fonts/AdobeClean-BoldSemiCnIt.ttf') format('truetype'), url('../fonts/AdobeClean-BoldSemiCnIt.svg') format('svg');
+}
+.adobecleanboldsemicnit{ font-family:'Conv_AdobeClean-BoldSemiCnIt',Sans-Serif; font-size:14px; color:#970617;}
+
+/* AdobeClean-It */
+@font-face {
+	font-family: 'Conv_AdobeClean-It';
+	src: url('../fonts/AdobeClean-It.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-It.woff') format('woff'), url('../fonts/AdobeClean-It.ttf') format('truetype'), url('../fonts/AdobeClean-It.svg') format('svg');
+}
+.adobecleanit{ font-family:'Conv_AdobeClean-It',Sans-Serif; font-size:22px;}
+
+
+/* AdobeClean-Light */
+@font-face {
+	font-family: 'Conv_AdobeClean-Light';
+	src: url('../fonts/AdobeClean-Light.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-Light.woff') format('woff'), url('../fonts/AdobeClean-Light.ttf') format('truetype'), url('../fonts/AdobeClean-Light.svg') format('svg');
+}
+.adobecleanlight{ font-family:'Conv_AdobeClean-Light',Sans-Serif; font-size:22px; color:#970617;}
+
+
+/* AdobeClean-LightIt */
+@font-face {
+	font-family: 'Conv_AdobeClean-LightIt';
+	src: url('../fonts/AdobeClean-LightIt.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-LightIt.woff') format('woff'), url('../fonts/AdobeClean-LightIt.ttf') format('truetype'), url('../fonts/AdobeClean-LightIt.svg') format('svg');
+}
+.adobecleanlightit{ font-family:'Conv_AdobeClean-LightIt',Sans-Serif; font-size:15px; color:#970617;}
+
+
+/* AdobeClean-SemiCn */
+@font-face {
+	font-family: 'Conv_AdobeClean-SemiCn';
+	src: url('../fonts/AdobeClean-SemiCn.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-SemiCn.woff') format('woff'), url('../fonts/AdobeClean-SemiCn.ttf') format('truetype'), url('../fonts/AdobeClean-SemiCn.svg') format('svg');
+}
+.adobecleansemicn{ font-family:'Conv_AdobeClean-SemiCn',Sans-Serif; font-size:22px;}
+
+/* AdobeClean-SemiCnIt */
+@font-face {
+	font-family: 'Conv_AdobeClean-SemiCnIt';
+	src: url('../fonts/AdobeClean-SemiCnIt.eot');
+	src: local('â˜º'), url('../fonts/AdobeClean-SemiCnIt.woff') format('woff'), url('../fonts/AdobeClean-SemiCnIt.ttf') format('truetype'), url('../fonts/AdobeClean-SemiCnIt.svg') format('svg');
+}
+.adobecleansemicnit{ font-family:'Conv_AdobeClean-SemiCnIt',Sans-Serif; font-size:22px;}
+
+.space{height:10px;}
+.space1{height:5px;}
+.content{ padding-right:10px; font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:13px; color:#fff; padding-top:20px; line-height:19px; text-align:justify; padding-left:15px;}
+.contentnews{ font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:13px; color:#fff; padding-top:10px; line-height:19px; text-align:left;}
+
+.contentinner{ padding-right:10px; font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:12px; color:#fff; padding-top:10px; line-height:19px; text-align:justify; padding-left:15px;}
+.heading1{font-family:'AdobeClean-Bold',Sans-Serif; font-size:22px; color:#fff;}
+.heading2{font-family:'Conv_AdobeClean-Light',Sans-Serif; font-size:24px; color:#ed4300;}
+
+.heading3{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#ed4300;}
+.oran{color:#ed4300;}
+
+
+a.topmenu{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:12px; color:#fff; text-decoration:none;}
+a.topmenu:hover{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:12px; color:#ed4300; text-decoration:underline;}
+
+a.topmenu2{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:15px; color:#ed4300; text-decoration:blink;}
+a.topmenu2:hover{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:15px; color:#fff; text-decoration:underline;}
+
+
+
+a.clarozon{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:12px; color:#fff; text-decoration:none;}
+a.clarozon:hover{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:12px; color:#000; text-decoration:underline;}
+
+
+.top{padding-right:10px;}
+
+a.newsdetails{font-family:'Conv_AdobeClean-Regular',Sans-Serif; font-size:13px; color:#fff; text-decoration:none;}
+a.newsdetails:hover{font-family:'Conv_AdobeClean-Regular',Sans-Serif; font-size:13px; color:#ed4300; text-decoration:underline;}
+
+.events{background-color:#ed4300; width:260px; height:20px; padding-left:5px; color:#000; font-family:'Conv_AdobeClean-Regular',Sans-Serif; font-size:13px;}
+.tech{background-color:#ed4300; width:100px; height:17px; padding-left:5px; color:#000; font-family:'Conv_AdobeClean-Regular',Sans-Serif; font-size:13px;}
+
+.titlebig{font-family:'Conv_AdobeClean-Regular',Sans-Serif; font-size:34px; color:#fff; padding-left:10px;}
+
+strong{color:#ed4300;}
+
+.textbox{width:180px; background-image: url(../images/formbox.png); background-repeat:no-repeat; background-color:transparent; height:20px; border:0px; display:block; padding-left:5px;}
+
+.cont{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:13px; color:#fff; line-height:25px;}
+
+.space{height:10px;}
+
+.padleft{padding-left:10px;}
+
+a.demo{background-image:url(../images/electronicademo.jpg); width:309px; height:309px; display:block;}
+a.demo:hover{background-image:url(../images/electronicademohover.jpg); width:309px; height:309px; }
+
+a.downloads{
+	margin: 10px 0;
+  color: #000;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px #fff;}
+  
+  a.downloads:hover{
+	margin: 10px 0;
+  color: #ed4300;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px #000;}
+  
+  
+.down{font-family:'AdobeClean-Bold',Sans-Serif; font-size:22px; color:#fff;}
+
+.smoth{font-size:20px;
+  -webkit-font-smoothing:antialiased;}

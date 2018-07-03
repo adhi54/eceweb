@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://www.codexworld.com/implement-captcha-codeigniter-captcha-helper/ -->
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="author" content="CodexWorld">
+				<link rel="icon" href="http://www.codexworld.com/wp-content/uploads/2014/09/favicon.ico" type="image/x-icon">
+		        <!--iOS/android/handheld specific -->	
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld</title>
+    <link rel="stylesheet" type="text/css" media="all" href="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/style.css">
+	<link rel="pingback" href="http://www.codexworld.com/xmlrpc.php">
+        <link href="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/bootstrap.css" rel="stylesheet">
+    
+<!-- This site is optimized with the Yoast SEO plugin v4.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="CodeIgniter CAPTCHA Helper – Tutorial on how to implement captcha in CodeIgniter. Simple code to create captcha image in CodeIgniter using captcha Helper.">
+<meta name="robots" content="noodp">
+<meta name="keywords" content="codeigniter captcha, codeigniter captcha helper, create captcha using codeigniter, codeigniter captcha tutorial, simple captcha code in codeigniter, create captcha in codeigniter, create captcha image in codeigniter, implement captcha in codeigniter, how to use captcha in codeigniter">
+<link rel="canonical" href="http://www.codexworld.com/implement-captcha-codeigniter-captcha-helper/">
+<link rel="publisher" href="https://plus.google.com/+codexworld">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld">
+<meta property="og:description" content="CodeIgniter CAPTCHA Helper – Tutorial on how to implement captcha in CodeIgniter. Simple code to create captcha image in CodeIgniter using captcha Helper.">
+<meta property="og:url" content="http://www.codexworld.com/implement-captcha-codeigniter-captcha-helper/">
+<meta property="og:site_name" content="CodexWorld">
+<meta property="article:publisher" content="https://www.facebook.com/codexworld">
+<meta property="article:tag" content="Captcha">
+<meta property="article:tag" content="CodeIgniter">
+<meta property="article:section" content="CodeIgniter">
+<meta property="article:published_time" content="2016-07-07T17:48:43+00:00">
+<meta property="og:image" content="http://www.codexworld.com/wp-content/uploads/2016/07/how-to-implement-captcha-in-codeigniter-using-captcha-helper.png">
+<meta property="og:image:width" content="1366">
+<meta property="og:image:height" content="768">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="CodeIgniter CAPTCHA Helper – Tutorial on how to implement captcha in CodeIgniter. Simple code to create captcha image in CodeIgniter using captcha Helper.">
+<meta name="twitter:title" content="How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld">
+<meta name="twitter:site" content="@codexworldblog">
+<meta name="twitter:image" content="https://i0.wp.com/www.codexworld.com/wp-content/uploads/2016/07/how-to-implement-captcha-in-codeigniter-using-captcha-helper.png?fit=1366%2C768">
+<meta name="twitter:creator" content="@codexworldblog">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="CodexWorld » Feed" href="http://www.codexworld.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="CodexWorld » Comments Feed" href="http://www.codexworld.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="CodexWorld » How to Implement Captcha in CodeIgniter using Captcha Helper Comments Feed" href="http://www.codexworld.com/implement-captcha-codeigniter-captcha-helper/feed/">
+		<script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/analytics.js"></script><script type="text/javascript" async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/rtbspub"></script><script src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/ca-pub-5750766974376423.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.codexworld.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=fbf66bc04bc3b0655175db4efe038895"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="GoogleFonts-css" href="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/jquery.min.js"></script>
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/bootstrap.js"></script>
+<link rel="https://api.w.org/" href="http://www.codexworld.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.codexworld.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.codexworld.com/wp-includes/wlwmanifest.xml"> 
+<!--Theme by CodexWorld.com-->
+<link rel="shortlink" href="http://wp.me/p6bxIh-r8">
+<link rel="alternate" type="application/json+oembed" href="http://www.codexworld.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.codexworld.com%2Fimplement-captcha-codeigniter-captcha-helper%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.codexworld.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.codexworld.com%2Fimplement-captcha-codeigniter-captcha-helper%2F&amp;format=xml">
+
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style>    		<script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/adsbygoogle.js"></script>
+		<script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5750766974376423",
+            enable_page_level_ads: true
+          });
+        </script>
+	</head>
+
+<body class="post-template-default single single-post postid-1682 single-format-standard cat-8-id"><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_cksync_1" style="display: none !important;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource.html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_oxsync" style="display: none !important;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(1).html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_cksync_0" style="display: none !important;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(2).html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_beacons" style="display: none !important;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(3).html"></iframe>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.codexworld.com/" title="CodexWorld Programming Blog">
+                								<img src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/codexworld-logo.png" alt="CodexWorld">
+					  	
+               	</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                				<ul id="menu-navigation-menus" class="nav navbar-nav"><li id="menu-item-1571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown"><a title="Web Development Tutorials" href="http://www.codexworld.com/tutorials" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-102" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="PHP  tutorials" href="http://www.codexworld.com/php/">PHP</a></li>	<li id="menu-item-125" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="WordPress tutorials" href="http://www.codexworld.com/wordpress/">WordPress</a></li>	<li id="menu-item-285" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Drupal tutorials" href="http://www.codexworld.com/drupal/">Drupal</a></li>	<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="CodeIgniter  tutorials" href="http://www.codexworld.com/codeigniter/">CodeIgniter</a></li>	<li id="menu-item-344" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="CakePHP Tutorials" href="http://www.codexworld.com/cakephp/">CakePHP</a></li><!--.dropdown-->
+</ul>
+</li><li id="menu-item-1021" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="How to Guides on Web Development" href="http://www.codexworld.com/how-to/">How To</a></li><li id="menu-item-311" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="Tutorials Demos" href="http://demos.codexworld.com/">Demos</a></li><li id="menu-item-1953" class="menu-item menu-item-type-post_type_archive menu-item-object-deals"><a title="Deals, Discount, Coupon on Web Hosting, Themes, and Services" href="http://www.codexworld.com/deals/">Deals</a></li><li id="menu-item-1572" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Web Services" href="http://www.codexworld.com/web-services/">Services</a></li><li id="menu-item-1502" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://www.codexworld.com/support-us/">Support Us</a></li><li id="menu-item-1418" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="Free Online Web Tools" target="_blank" href="http://www.xwebtools.com/">Web Tools</a></li></ul>                <ul class="nav navbar-nav navbar-right">
+                	<form name="googleForm" action="http://www.codexworld.com/search" class="navbar-form navbar-left">
+                    <div class="nav-search-el">
+               		<button type="submit" class="btn"> <span class="glyphicon glyphicon-search search-icon"></span></button></div>
+                    <input name="q" id="q" type="text" class="search-input-box" placeholder="Search tutorials">
+                    </form>
+             	</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container --> 
+    </nav>
+    <div class="bar-header"><script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/adsbygoogle.js"></script>
+<!-- HeaderTopAds -->
+<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="4802459696" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><iframe width="1200" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(4).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><ins class="adsbygoogle" data-adsbygoogle-status="done" style="display: none; width: auto; height: auto;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><iframe width="0" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(5).html"></iframe></ins></ins></ins>	
+ 	<div class="container"><div class="row">
+	<div class="col-lg-8">
+	    	            <div class="breadcrumb"><a href="http://www.codexworld.com/" rel="nofollow">Home</a>&nbsp;&nbsp;»&nbsp;&nbsp;<a href="http://www.codexworld.com/tutorials/codeigniter/" rel="nofollow">CodeIgniter</a> &nbsp;&nbsp;»&nbsp;&nbsp; How to Implement Captcha in CodeIgniter using Captcha Helper</div>
+                <h1 class="single">How to Implement Captcha in CodeIgniter using Captcha Helper</h1>
+        <hr class="postmeta">
+        <div class="post_comment_social">
+            <div class="post-meta">
+                <span>By: CodexWorld</span><span>In: <a href="http://www.codexworld.com/tutorials/codeigniter/" alt="CodeIgniter">CodeIgniter</a></span><span>Last Updated:&nbsp;Jul 7, 2016            </span></div>
+            <div class="socialicons">
+                <span class="socialspace"><a href="javascript:void(0)" class="icon-fb" onclick="javascript:generic_social_share(&#39;http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.codexworld.com%2Fimplement-captcha-codeigniter-captcha-helper%2F&#39;)" title="Facebook"><i class="icon"></i>Share</a></span>
+                <span class="socialspace"><a href="javascript:void(0)" class="icon-tw" onclick="javascript:generic_social_share(&#39;http://twitter.com/share?text=How to Implement Captcha in CodeIgniter using Captcha Helper&amp;url=http://www.codexworld.com/implement-captcha-codeigniter-captcha-helper/&#39;)" title="Twitter"><i class="icon"></i>Tweet</a></span>
+                <span class="socialspace secondary-shares"><a href="javascript:void(0)" onclick="javascript:generic_social_share(&#39;https://plus.google.com/share?url=http%3A%2F%2Fwww.codexworld.com%2Fimplement-captcha-codeigniter-captcha-helper%2F&#39;)" class="icon-gplus" title="Google"><i class="icon"></i></a></span>
+                <span class="socialspace secondary-shares"><a href="javascript:void(0)" class="icon-linked_in" onclick="javascript:generic_social_share(&#39;http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.codexworld.com%2Fimplement-captcha-codeigniter-captcha-helper%2F&#39;)"><i class="icon"></i></a></span>
+            </div>
+        </div>
+        <hr>
+        <div class="post_content">
+		        <p></p><p>A CAPTCHA (Complete Automated Public Turning test to tell Computer and Human Apart) is a type of challenge test to identify whether the user is human or not. Captcha mostly used in all web application to protect the website from getting spammed. A captcha is very important where any input is given from user or any action is processed based on the user response.</p>
+<p>CAPTCHA is randomly generated string incorporated in an image file which is display to the user and the random string is stored in SESSION variable. Once the user submits the captcha word by viewing captcha image, the submitted value will be compare with the session value. If both the captcha code is matched, further action should take.</p>
+<p>In this tutorial, we’ll demonstrate how to implement captcha in CodeIgniter. CodeIgniter provides a captcha helper to create CAPTCHA. <b>CodeIgniter CAPTCHA Helper</b> helps to generate captcha image with customization options. Here we’ll provide the example code to implement captcha functionality in CodeIgniter. The following functionality will be added to this <a href="http://www.codexworld.com/simple-php-captcha-using-codexworldcaptcha/">simple PHP captcha script</a> for CodeIgniter.</p>
+<ul class="bullet_disk_list">
+<li>Create and display captcha image.</li>
+<li>Get user input and submit for comparison.</li>
+<li>Compare user input with captcha word and return the status.</li>
+</ul>
+<p>The following code is used to create captcha in CodeIgniter.</p>
+<pre><span style="color: #FF8000">//&nbsp;Captcha&nbsp;configuration<br></span><span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;array(<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_path'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'captcha_images/'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_url'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'captcha_images/'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_width'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'150'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_height'&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">50</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'word_length'&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'font_size'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">16<br></span><span style="color: #007700">);<br></span><span style="color: #0000BB">$captcha&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">create_captcha</span><span style="color: #007700">(</span><span style="color: #0000BB">$config</span><span style="color: #007700">);</span></pre>
+<p>You can use a different font for captcha word by specifying font_path value in captcha configuration array.</p>
+<pre><span style="color: #DD0000">'font_path'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'./path/to/fonts/texb.ttf'</span></pre>
+<p>Now we’ll show how you can use this captcha script in your CodeIgniter application. Before you begin, take a look at the application folders and files structure.</p>
+<div><img src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/create-captcha-in-codeigniter-folders-files-structure-codexworld.png" alt="create-captcha-in-codeigniter-folders-files-structure-codexworld" class="alignnone size-full wp-image-1685" srcset="https://i2.wp.com/www.codexworld.com/wp-content/uploads/2016/07/create-captcha-in-codeigniter-folders-files-structure-codexworld.png?w=331 331w, https://i2.wp.com/www.codexworld.com/wp-content/uploads/2016/07/create-captcha-in-codeigniter-folders-files-structure-codexworld.png?resize=300%2C238 300w, https://i2.wp.com/www.codexworld.com/wp-content/uploads/2016/07/create-captcha-in-codeigniter-folders-files-structure-codexworld.png?resize=200%2C159 200w, https://i2.wp.com/www.codexworld.com/wp-content/uploads/2016/07/create-captcha-in-codeigniter-folders-files-structure-codexworld.png?resize=289%2C230 289w" sizes="(max-width: 331px) 100vw, 331px" width="331" height="263"></div>
+<h2>Controller (<code>Captcha.php</code>)</h2>
+<p>To using the CodeIgniter captcha helper, you need to load captcha helper which is included in <code>__construct()</code> function.<br>
+<code>index()</code> function creates captcha, pass the captcha image to view, and load the respective view. Also, handles the captcha submission and comparison process.<br>
+<code>refresh()</code> function is used when the user request for a new captcha.</p>
+<pre><span style="color: #0000BB">&lt;?php<br>defined</span><span style="color: #007700">(</span><span style="color: #DD0000">'BASEPATH'</span><span style="color: #007700">)&nbsp;OR&nbsp;exit(</span><span style="color: #DD0000">'No&nbsp;direct&nbsp;script&nbsp;access&nbsp;allowed'</span><span style="color: #007700">);<br>class&nbsp;</span><span style="color: #0000BB">Captcha&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">CI_Controller<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">__construct</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Load&nbsp;the&nbsp;captcha&nbsp;helper<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">helper</span><span style="color: #007700">(</span><span style="color: #DD0000">'captcha'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">index</span><span style="color: #007700">(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;If&nbsp;captcha&nbsp;form&nbsp;is&nbsp;submitted<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">post</span><span style="color: #007700">(</span><span style="color: #DD0000">'submit'</span><span style="color: #007700">)){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$inputCaptcha&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">post</span><span style="color: #007700">(</span><span style="color: #DD0000">'captcha'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sessCaptcha&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">userdata</span><span style="color: #007700">(</span><span style="color: #DD0000">'captchaCode'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$inputCaptcha&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">$sessCaptcha</span><span style="color: #007700">){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Captcha&nbsp;code&nbsp;matched.'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Captcha&nbsp;code&nbsp;was&nbsp;not&nbsp;match,&nbsp;please&nbsp;try&nbsp;again.'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Captcha&nbsp;configuration<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_path'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'captcha_images/'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_url'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'captcha_images/'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_width'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'150'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_height'&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">50</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'word_length'&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'font_size'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">16<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$captcha&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">create_captcha</span><span style="color: #007700">(</span><span style="color: #0000BB">$config</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Unset&nbsp;previous&nbsp;captcha&nbsp;and&nbsp;store&nbsp;new&nbsp;captcha&nbsp;word<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">unset_userdata</span><span style="color: #007700">(</span><span style="color: #DD0000">'captchaCode'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set_userdata</span><span style="color: #007700">(</span><span style="color: #DD0000">'captchaCode'</span><span style="color: #007700">,</span><span style="color: #0000BB">$captcha</span><span style="color: #007700">[</span><span style="color: #DD0000">'word'</span><span style="color: #007700">]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Send&nbsp;captcha&nbsp;image&nbsp;to&nbsp;view<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'captchaImg'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$captcha</span><span style="color: #007700">[</span><span style="color: #DD0000">'image'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Load&nbsp;the&nbsp;view<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">view</span><span style="color: #007700">(</span><span style="color: #DD0000">'captcha/index'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">refresh</span><span style="color: #007700">(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Captcha&nbsp;configuration<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_path'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'captcha_images/'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_url'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'captcha_images/'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_width'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'150'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'img_height'&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">50</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'word_length'&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'font_size'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">16<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$captcha&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">create_captcha</span><span style="color: #007700">(</span><span style="color: #0000BB">$config</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Unset&nbsp;previous&nbsp;captcha&nbsp;and&nbsp;store&nbsp;new&nbsp;captcha&nbsp;word<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">unset_userdata</span><span style="color: #007700">(</span><span style="color: #DD0000">'captchaCode'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set_userdata</span><span style="color: #007700">(</span><span style="color: #DD0000">'captchaCode'</span><span style="color: #007700">,</span><span style="color: #0000BB">$captcha</span><span style="color: #007700">[</span><span style="color: #DD0000">'word'</span><span style="color: #007700">]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Display&nbsp;captcha&nbsp;image<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$captcha</span><span style="color: #007700">[</span><span style="color: #DD0000">'image'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</span></pre>
+<h2>View (<code>captcha/index.php</code>)</h2>
+<p>Initially, the view file is loaded with captcha image, refresh image, input field, and submit button. Once the user submits the captcha word it will be sent to the <code>index()</code> method of Captcha controller for comparison. </p>
+<p>Also, the user can request for a new captcha image by refresh link. An ajax script would run on refresh link click, then new captcha image is fetched from the <code>refresh()</code> method of Captcha controller and replace the captcha image with new image.</p>
+<pre>&lt;!<span style="color:#bf4f24">DOCTYPE</span> html&gt;
+&lt;<span style="color:#bf4f24">html</span>&gt;
+&lt;<span style="color:#bf4f24">head</span>&gt;
+    &lt;<span style="color:#bf4f24">title</span>&gt;Captcha implement in CodeIgniter by CodexWorld&lt;/<span style="color:#bf4f24">title</span>&gt;
+    &lt;<span style="color:#bf4f24">script</span> <span style="color:#bf4f24">src</span>=<span style="color:#0b6125">"<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">();&nbsp;</span><span style="color: #0000BB">?&gt;</span>assets/js/jquery.min.js"</span>&gt;&lt;/<span style="color:#bf4f24">script</span>&gt;
+    &lt;<span style="color:#bf4f24">script</span>&gt;
+    <span style="color:#691c97">$</span>(<span style="color:#691c97">document</span>)<span style="color:#693a17">.ready</span>(<span style="color:#a71d5d;font-style:italic">function</span>(){
+        <span style="color:#691c97">$</span>('<span style="color:#bf4f24">.refreshCaptcha</span>').on(<span style="color:#0b6125">'click'</span>, <span style="color:#a71d5d;font-style:italic">function</span>(){
+            <span style="color:#794938">$</span><span style="color:#693a17">.get</span>(<span style="color:#0b6125">'<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'captcha/refresh'</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>'</span>, <span style="color:#a71d5d;font-style:italic">function</span>(data){
+                <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#captImg</span>')<span style="color:#693a17">.html</span>(data);
+            });
+        });
+    });
+    &lt;/<span style="color:#bf4f24">script</span>&gt;
+&lt;/<span style="color:#bf4f24">head</span>&gt;
+&lt;<span style="color:#bf4f24">body</span>&gt;
+    &lt;<span style="color:#bf4f24">p</span>&gt;Submit the word you see below:&lt;/<span style="color:#bf4f24">p</span>&gt;
+    &lt;<span style="color:#bf4f24">p</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"captImg"</span>&gt;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$captchaImg</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>&lt;/<span style="color:#bf4f24">p</span>&gt;
+    &lt;<span style="color:#bf4f24">a</span> <span style="color:#bf4f24">href</span>=<span style="color:#0b6125">"javascript:void(0);"</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"refreshCaptcha"</span> &gt;&lt;<span style="color:#bf4f24">img</span> <span style="color:#bf4f24">src</span>=<span style="color:#0b6125">"<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'assets/images/refresh.png'</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>"</span>/&gt;&lt;/<span style="color:#bf4f24">a</span>&gt;
+    &lt;<span style="color:#bf4f24">form</span> <span style="color:#bf4f24">method</span>=<span style="color:#0b6125">"post"</span>&gt;
+        &lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"text"</span> <span style="color:#bf4f24">name</span>=<span style="color:#0b6125">"captcha"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">""</span>/&gt;
+        &lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"submit"</span> <span style="color:#bf4f24">name</span>=<span style="color:#0b6125">"submit"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">"SUBMIT"</span>/&gt;
+    &lt;/<span style="color:#bf4f24">form</span>&gt;
+&lt;/<span style="color:#bf4f24">body</span>&gt;
+&lt;/<span style="color:#bf4f24">html</span>&gt;
+</pre>
+<p></p>
+                <div class="img_center demo-links" id="ProjectDemoDownload">
+		<a id="DownloadProject" class="btn_link green" href="http://www.codexworld.com/downloads/implement-captcha-codeigniter-captcha-helper"><i class="glyphicon glyphicon-download"></i>Download Source Code</a>        </div>
+                </div>
+        <div class="details-page-ad-bottom"><script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/adsbygoogle.js"></script>
+<!-- PageBottomRectangle -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5750766974376423" data-ad-slot="2412776099" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(6).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        <!-- Author Box Start -->
+        		<!-- Author Box end -->
+                <div class="codex-end">
+            <div class="article-nav">
+                <div class="article-nav__link-container article-nav__prev">
+                                        <a class="article-nav__link" title="How to Create and Save XML File using PHP" href="http://www.codexworld.com/create-save-xml-file-using-php/">
+                        <div class="article-nav__link-text-container"><span class="article-nav__subtitle">Previous</span>
+                        <div class="article-nav__row">
+                            <div class="article-nav__icon"><i class="glyphicon glyphicon-arrow-left"></i></div>
+                            <div class="article-nav__link-title">How to Create and Save XML File using PHP</div>
+                        </div>
+                        </div>
+                    </a>
+                                    </div>
+                <div class="article-nav__link-container article-nav__next">
+                                        <a class="article-nav__link" title="How to Get Google Maps JavaScript API Key" href="http://www.codexworld.com/get-google-maps-javascript-api-key/">
+                        <div class="article-nav__link-text-container"><span class="article-nav__subtitle">Next</span>
+                        <div class="article-nav__row">
+                            <div class="article-nav__link-title">How to Get Google Maps JavaScript API Key</div>
+                            <div class="article-nav__icon"><i class="glyphicon glyphicon-arrow-right"></i></div>
+                        </div>
+                        </div>
+                    </a>
+                                    </div>
+            </div>
+        </div>
+    
+    
+        <div class="recomend-head"><h4>Recommended Tutorials For You</h4></div>
+        <div class="bar-content">
+		<script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/adsbygoogle.js"></script>
+        <!-- CodexWorldMatchedContent -->
+        <ins class="adsbygoogle" style="display: block; height: 503px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="2166452094" data-ad-format="autorelaxed" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:503px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:503px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><iframe width="839" height="503" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(7).html"></iframe></ins></ins></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div>
+<div class="bar-footer"><script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/adsbygoogle.js"></script>
+<!-- FooterLinksRenponsive -->
+<ins class="adsbygoogle" style="display: block; height: 30px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="2211144895" data-ad-format="link" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:30px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:30px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><iframe width="839" height="30" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(8).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>    
+        <!-- You can start editing here. -->
+<div class="total-comments comment-respond"><h2><span class="comment-count">3 Comments</span></h2></div>
+<div id="comments">
+	<ol class="commentlist clearfix">
+			<li class="comment even thread-even depth-1" id="li-comment-41442">
+		<div id="comment-41442" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Johan Van De Merwe Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p></p><p>Thank you very much for this code. I was a great inspiration to implement it in my own program. It helped me how to have an Ajax refresh button on my login page.</p>
+<p></p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>February 24, 2017 at 4:16 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-34969">
+		<div id="comment-34969" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Rajkamal Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p></p><p>where is that helper file in codeigniter-captcha-helper folder?</p>
+<p></p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>November 18, 2016 at 8:06 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<ul class="children">
+	<li class="comment byuser comment-author-nitya192265 bypostauthor even depth-2" id="li-comment-34971">
+		<div id="comment-34971" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">CodexWorld Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p></p><p>You’ll find the captcha helper in system folder – <code>/system/helpers/captcha_helper.php</code></p>
+<p></p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>November 18, 2016 at 9:03 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<!-- #comment-## -->
+</ul><!-- .children -->
+<!-- #comment-## -->
+	</ol>
+</div>
+<div class="commentPagination">
+</div>
+<div id="respond" class="comment-respond page-content clearfix">
+    <div class="boxedtitle page-title"><h2>Leave a reply</h2></div>
+    	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.codexworld.com/implement-captcha-codeigniter-captcha-helper/#respond" style="display:none;">Cancel</a></small></h3>			<form action="http://www.codexworld.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<div id="respond-textarea"><p class="comment-form-comment"><label class="required" for="comment">Comment<span>*</span></label><textarea id="comment" name="comment" cols="58" rows="8" aria-required="true" required=""></textarea></p></div><div id="respond-inputs" class="clearfix"><p>
+                  <label class="required" for="author">Your Name<span>*</span></label>
+									<input id="author" name="author" type="text" value="" size="" aria-required="true" required=""></p>
+<p>
+                  <label class="required" for="email">Your Email<span>*</span></label>
+									<input id="email" name="email" type="text" value="" size="" aria-required="true" required=""></p>
+<p class="last">
+                  <label class="required" for="url">Your Website</label>
+									<input id="url" name="url" type="text" value="" size="">
+									</p></div>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="1682" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b5c17da45d"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1489063835436"></form>
+			</div><!-- #respond -->
+	</div>
+
+                                
+	</div>
+<div class="col-lg-4">
+<div class="well widget-sidebar"><h4>CONNECT WITH CODEXWORLD</h4><div class="news_box social-icons-leftsidebar"><p>Subscribe CodexWorld updates via email and get every new post delivered to your inbox.</p>    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://feedburner.google.com/fb/a/mailverify?uri=codexworld&#39;, &#39;popupwindow&#39;, &#39;scrollbars=no,width=550,height=520&#39;);return true;">
+        <input name="email" type="text" placeholder="Enter email address">
+        <input type="hidden" value="codexworld" name="uri">
+		<input type="hidden" name="loc" value="en_US">
+        <button class="search_submit" type="submit">Subscribe</button>
+    </form>
+    
+    <ul><li class="facebook"><a href="https://www.facebook.com/codexworld" target="_blank">Facebook</a></li><li class="twitter"><a href="https://twitter.com/codexworldblog" target="_blank">Twitter</a></li><li class="googleplus"><a href="https://plus.google.com/+codexworld" target="_blank">Google+</a></li><li class="linkedin"><a href="https://www.linkedin.com/company/codexworld" target="_blank">LinkedIN</a></li><li class="pinterest"><a href="https://www.pinterest.com/codexworld" target="_blank">Pinterest</a></li><li class="youtube"><a href="https://www.youtube.com/codexworld" target="_blank">YouTube</a></li><li class="rss"><a href="http://feeds.feedburner.com/codexworld" target="_blank">RSS Feed</a></li></ul></div></div><div class="well widget-sidebar adsense_widget"><script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/adsbygoogle.js"></script>
+<!-- RightSidebar300x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5750766974376423" data-ad-slot="6237639296" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_5_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(9).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="well widget-sidebar"><h4>TRENDING TUTORIALS</h4><div class="textwidget popular_post_widget"><ul>  <li><a title="Login with Facebook using PHP" href="http://www.codexworld.com/login-with-facebook-using-php/">Login with Facebook using PHP</a></li>
+    <li><a title="Drag and Drop Reorder Images using jQuery, Ajax, PHP &amp; MySQL" href="http://www.codexworld.com/drag-drop-images-reorder-using-jquery-ajax-php-mysql/">Drag and Drop Reorder Images using jQuery, Ajax, PHP &amp; MySQL</a></li>
+    <li><a title="Login with Google Account using PHP" href="http://www.codexworld.com/login-with-google-api-using-php/">Login with Google Account using PHP</a></li>
+    <li><a title="PayPal Standard Payment Gateway Integration in PHP" href="http://www.codexworld.com/paypal-standard-payment-gateway-integration-php/">PayPal Standard Payment Gateway Integration in PHP</a></li>
+    <li><a title="Add Remove input fields dynamically using jQuery" href="http://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/">Add Remove input fields dynamically using jQuery</a></li>
+    <li><a title="Upload multiple images using jQuery, Ajax and PHP" href="http://www.codexworld.com/upload-multiple-images-using-jquery-ajax-php/">Upload multiple images using jQuery, Ajax and PHP</a></li>
+    <li><a title="CodeIgniter Tutorial for Beginners" href="http://www.codexworld.com/codeigniter-tutorial-beginners-learn-codeigniter-scratch/">CodeIgniter Tutorial for Beginners</a></li>
+    <li><a title="Login with Twitter using PHP" href="http://www.codexworld.com/login-with-twitter-using-php/">Login with Twitter using PHP</a></li>
+  </ul></div></div><div class="well widget-sidebar adsense_widget"><script async="" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/adsbygoogle.js"></script>
+<!-- RightSidebarResponsive -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="4435324496" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:405px;background-color:transparent"><ins id="aswift_6_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:405px;background-color:transparent"><iframe width="405" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(10).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="well widget-sidebar"><h4>TOPICS</h4><div class="row textwidget tabCategory"><ul class="list-unstyled">  <li><a title="CakePHP" href="http://www.codexworld.com/tutorials/cakephp/">CakePHP</a></li>
+    <li><a title="CodeIgniter" href="http://www.codexworld.com/tutorials/codeigniter/">CodeIgniter</a></li>
+    <li><a title="Drupal" href="http://www.codexworld.com/tutorials/drupal/">Drupal</a></li>
+    <li><a title="Facebook" href="http://www.codexworld.com/tutorials/facebook/">Facebook</a></li>
+    <li><a title="GoogleAPI" href="http://www.codexworld.com/tutorials/googleapi/">GoogleAPI</a></li>
+    <li><a title="GoogleMap" href="http://www.codexworld.com/tutorials/googlemap/">GoogleMap</a></li>
+    <li><a title="htaccess" href="http://www.codexworld.com/tutorials/htaccess/">htaccess</a></li>
+    <li><a title="HTML&amp;CSS" href="http://www.codexworld.com/tutorials/html-css/">HTML&amp;CSS</a></li>
+    <li><a title="HTML5" href="http://www.codexworld.com/tutorials/html5/">HTML5</a></li>
+    <li><a title="JavaScript" href="http://www.codexworld.com/tutorials/javascript/">JavaScript</a></li>
+    <li><a title="Magento" href="http://www.codexworld.com/tutorials/magento/">Magento</a></li>
+    <li><a title="MySQL" href="http://www.codexworld.com/tutorials/mysql/">MySQL</a></li>
+    <li><a title="PayPal" href="http://www.codexworld.com/tutorials/paypal/">PayPal</a></li>
+    <li><a title="PHP" href="http://www.codexworld.com/tutorials/php/">PHP</a></li>
+    <li><a title="Social Media" href="http://www.codexworld.com/tutorials/social-media/">Social Media</a></li>
+    <li><a title="Twitter" href="http://www.codexworld.com/tutorials/twitter/">Twitter</a></li>
+    <li><a title="Ubuntu" href="http://www.codexworld.com/tutorials/ubuntu/">Ubuntu</a></li>
+    <li><a title="Web Development" href="http://www.codexworld.com/tutorials/web-development/">Web Development</a></li>
+    <li><a title="WordPress" href="http://www.codexworld.com/tutorials/wordpress/">WordPress</a></li>
+  </ul></div></div><div class="well widget-sidebar"><h4>LATEST HOW TO GUIDES</h4><div class="textwidget latest_howto_widget"><ul>  <li><a title="How to Monitor Ajax Requests in Chrome" href="http://www.codexworld.com/how-to/monitor-ajax-requests-google-chrome/">How to Monitor Ajax Requests in Chrome</a></li>
+    <li><a title="How to Make Phone Number Clickable on Mobile Devices" href="http://www.codexworld.com/how-to/make-phone-number-clickable-hyperlink-mobile-devices/">How to Make Phone Number Clickable on Mobile Devices</a></li>
+    <li><a title="How to Disable Click Event using jQuery" href="http://www.codexworld.com/how-to/disable-click-event-jquery/">How to Disable Click Event using jQuery</a></li>
+    <li><a title="How to Filter Array by Value in PHP" href="http://www.codexworld.com/how-to/php-filter-array-by-value/">How to Filter Array by Value in PHP</a></li>
+    <li><a title="How to Calculate Age from Date of Birth in PHP" href="http://www.codexworld.com/how-to/calculate-age-from-date-of-birth-php/">How to Calculate Age from Date of Birth in PHP</a></li>
+  </ul></div></div><div class="well widget-sidebar adsense_widget adsSt_widget"><script id="mNCC" language="javascript">
+   medianet_width = "300";
+   medianet_height = "250";
+   medianet_crid = "730592212";
+   medianet_versionId = "111299";
+   (function() {
+       var isSSL = 'https:' == document.location.protocol;
+       var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU8XQ5IB' + (isSSL ? '&https=1' : '');
+       document.write('<scr' + 'ipt type="text/javascript" id="mNSC" src="' + mnSrc + '"></scr' + 'ipt>');
+   })();
+</script><script type="text/javascript" id="mNSC" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/nmedianet.js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_openx_730592212" style="display: none;" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(11).html"></iframe><script language="javascript" type="text/javascript" id="_mN_dy_730592212" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/fcmdynet.js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="250" width="100%" id="_mN_main_730592212_0_n" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/saved_resource(12).html"></iframe></div></div></div>
+</div>
+<footer class="footer" role="contentinfo">
+	<div class="footer_info">
+    	<div class="wrapper"> 
+        	        Copyright © 2017 <a href="http://www.codexworld.com/" title="Programming Blog, Web Development, Tutorials, PHP, MySQL, jQuery, Ajax, WordPress, Drupal, CodeIgniter, CakePHP and Demos">CodexWorld</a>. All rights reserved.
+            &nbsp;&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/cc-by-nc-nd.png"></a>
+        	<ul>
+            	<li><a href="http://www.codexworld.com/about-us" title="About Us">About Us</a></li>
+                <li class="sep">|</li>
+                <li><a href="http://www.codexworld.com/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                <li class="sep">|</li>
+                <li><a href="http://www.codexworld.com/terms-conditions" title="Terms and Conditions">Terms &amp; Conditions</a></li>
+                <li class="sep">|</li>
+            	<li><a href="http://www.codexworld.com/write-for-us" title="Write For Us">Write For Us</a></li>
+                <li class="sep">|</li>
+            	<li><a href="http://www.codexworld.com/advertise" title="Advertise on CodexWorld">Advertise</a></li>
+                <li class="sep">|</li>
+            	<li><a href="http://www.codexworld.com/contact" title="Contact">Contact</a></li>
+         	</ul>
+     	</div>
+  	</div> 
+</footer>
+<a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: block;">Top<span></span></a>
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/form.js"></script>
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/photon.js"></script>
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/e-201710.js" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.7',blog:'91409221',post:'1682',tz:'0',srv:'www.codexworld.com'} ]);
+	_stq.push([ 'clickTrackerInit', '91409221', '1682' ]);
+</script>
+<script type="text/javascript" async="">function generic_social_share(url){window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');return true;}</script>
+<script type="text/javascript" async="">
+jQuery(document).ready(function(){
+    var stbox = jQuery(".adsSt_widget");
+    var stt = stbox.offset().top;
+    jQuery(document).scroll(function(){
+        var sta = jQuery(this).scrollTop();
+        if(sta > stt){
+            stbox.css({position:"fixed",top:40});
+        }else{
+            stbox.removeAttr("style");
+        }
+    });
+});
+</script>
+<script async="">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-55035394-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript" async="">
+jQuery(document).ready(function(){ jQuery(window).scroll(function(){ if (jQuery(this).scrollTop() > 100) { jQuery('#scroll').fadeIn(); } else { jQuery('#scroll').fadeOut(); } }); jQuery('#scroll').click(function(){ jQuery("html, body").animate({ scrollTop: 0 }, 600); return false; }); });
+</script>
+
+
+
+<!-- Dynamic page generated in 1.518 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-03-09 12:50:21 -->
+
+<!-- Compression = gzip --><img src="./How to Implement Captcha in CodeIgniter using Captcha Helper - CodexWorld_files/g.gif" alt=":)" width="6" height="5" id="wpstats"></body></html>

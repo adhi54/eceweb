@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="files/semantic.min.css">
+<script src="files/jquery.js"></script>
+<script src="files/semantic.min.js" ></script>
+	<title>ECE</title>
+</head>
+<body>
+<div class="ui container">
+<div class="ui top four attached tabular menu">
+  <a class="item" data-tab="first">Search</a>
+  <a class="item" data-tab="second">Recent Posts</a>
+  <a class="item" data-tab="third">Submit Question</a>
+  <a class="item" data-tab="fourth">See All</a>
+</div>
+<div class="ui bottom attached tab segment" data-tab="first">
+  <center><div class="ui action input">
+  <input placeholder="Search..." type="text" style="width: 300px;">
+  <button class="ui blue button">Search</button>
+</div></center>
+</div>
+<div class="ui bottom attached tab segment" data-tab="second">
+  <!--accordian -->
+<center><div class="ui styled fluid accordion" style="width: 600px;">
+  <div class="title" style="margin-right: 500px;">
+    <i class="dropdown icon"></i>
+   	Basics
+
+  </div>
+  <div class="content">
+    <p class="transition hidden">para about basics</p>
+  </div>
+</div>
+<br>
+<div class="ui styled fluid accordion" style="width: 600px;">
+  <div class="title" style="margin-right: 430px;">
+    <i class="dropdown icon"></i>
+   	Communications
+
+  </div>
+  <div class="content">
+    <p class="transition hidden">para about Communications</p>
+  </div>
+</div>
+<br>
+<div class="ui styled fluid accordion" style="width: 600px;">
+  <div class="title" style="margin-right: 510px;">
+    <i class="dropdown icon"></i>
+   	VLSI
+
+  </div>
+  <div class="content">
+    <p class="transition hidden">para about VLSI</p>
+  </div>
+</div>
+<br>
+<div class="ui styled fluid accordion" style="width: 600px;">
+  <div class="title" style="margin-right: 380px;">
+    <i class="dropdown icon"></i>
+   	Signal & Image Process
+
+  </div>
+  <div class="content">
+    <p class="transition hidden">para about Signal & Image Process </p>
+  </div>
+</div>
+<br>
+<div class="ui styled fluid accordion" style="width: 600px;">
+  <div class="title" style="margin-right: 360px;">
+    <i class="dropdown icon"></i>
+   	Embedded Systems & IoT
+
+  </div>
+  <div class="content">
+    <p class="transition hidden">para about Embedded Systems & IoT</p>
+  </div>
+</div>
+
+</center>
+
+
+<!--accordian-->
+</div>
+<div class="ui bottom attached tab segment" data-tab="third">
+<br>
+<div class="ui centered twelve field grid" style="margin-right: 160px;">
+	<div class="field" style="margin-top: 5px;">
+		<b>Domain:</b>
+	</div>
+	<div class="field">
+  <div class="ui selection dropdown">
+  <i class="dropdown icon"></i>
+  <div class="default text">Select...</div>
+  <div class="menu">
+    <div class="item" data-value="Basics" data-text="basics">
+      Basics
+    </div>
+    <div class="item" data-value="Communication" data-text="Communication">
+      
+      Communication
+    </div>
+    <div class="item" data-value="VLSI" data-text="VLSI">
+      
+      VLSI
+    </div>
+    <div class="item" data-value="Signal and Image" data-text="Signal and Image">
+      
+      Signal & Image Process
+    </div>
+    <div class="item" data-value="IoT" data-text="IoT">
+      
+      Embedded Systems & IoT
+    </div>
+    <div id="othercliked" class="item" data-value="Other" data-text="Other">
+      
+     	Other
+    </div>
+  </div>
+</div>
+</div>
+<div id="showother" class="field" style="display: none;margin-left:600px" > 
+<button class="ui teal button">Submit</button>
+</div>
+</div>
+<br><br><br>
+<div class="ui centered ten field grid" style="margin-right: 100px;">
+	<div class="field">
+		<b>Question title:</b>
+	</div>
+	<div class="field">
+		<textarea rows="2" style="width: 300px;"></textarea>
+	</div>
+
+
+</div>
+<br><br><br>
+
+<div class="ui centered ten field grid" style="margin-right: 160px;">
+  <div class="field">
+    <b>Question Description:</b>
+  </div>
+  <div class="field">
+    <textarea rows="5" style="width: 300px;"></textarea>
+  </div>
+</div>
+<br><br>
+<div style="margin-left:500px;">
+    <button class="ui centered blue button">Submit</button>
+    </div>
+
+</div>
+<script>
+	$('.menu .item')
+  .tab()
+;
+
+$('.ui.accordion')
+  .accordion()
+;
+$('.ui.dropdown')
+  .dropdown()
+;
+$('#othercliked').click(function(){
+	$('#showother').show();
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/ -->
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="author" content="CodexWorld">
+				<link rel="icon" href="http://www.codexworld.com/wp-content/uploads/2014/09/favicon.ico" type="image/x-icon">
+		        <!--iOS/android/handheld specific -->	
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>PayPal Payment Gateway Integration in CodeIgniter - CodexWorld</title>
+    <link rel="stylesheet" type="text/css" media="all" href="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/style.css">
+	<link rel="pingback" href="http://www.codexworld.com/xmlrpc.php">
+        <link href="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/bootstrap.css" rel="stylesheet">
+    
+<!-- This site is optimized with the Yoast SEO plugin v4.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="PayPal Standard Payment Gateway Integration in CodeIgniter - Learn how you can integrate PayPal payment gateway in CodeIgniter.">
+<meta name="robots" content="noodp">
+<meta name="keywords" content="paypal integration in codeigniter, paypal integration in codeigniter tutorial, paypal integration in codeigniter step by step, codeigniter paypal integration, codeigniter paypal integration tutorial, paypal payment gateway integration in codeigniter">
+<link rel="canonical" href="http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/">
+<link rel="publisher" href="https://plus.google.com/+codexworld">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PayPal Payment Gateway Integration in CodeIgniter - CodexWorld">
+<meta property="og:description" content="PayPal Standard Payment Gateway Integration in CodeIgniter - Learn how you can integrate PayPal payment gateway in CodeIgniter.">
+<meta property="og:url" content="http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/">
+<meta property="og:site_name" content="CodexWorld">
+<meta property="article:publisher" content="https://www.facebook.com/codexworld">
+<meta property="article:tag" content="CodeIgniter">
+<meta property="article:tag" content="Payment Gateway">
+<meta property="article:tag" content="PayPal">
+<meta property="article:section" content="CodeIgniter">
+<meta property="article:published_time" content="2015-12-04T08:07:16+00:00">
+<meta property="article:modified_time" content="2017-02-27T17:31:50+00:00">
+<meta property="og:updated_time" content="2017-02-27T17:31:50+00:00">
+<meta property="og:image" content="http://www.codexworld.com/wp-content/uploads/2015/12/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png">
+<meta property="og:image:width" content="602">
+<meta property="og:image:height" content="327">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="PayPal Standard Payment Gateway Integration in CodeIgniter - Learn how you can integrate PayPal payment gateway in CodeIgniter.">
+<meta name="twitter:title" content="PayPal Payment Gateway Integration in CodeIgniter - CodexWorld">
+<meta name="twitter:site" content="@codexworldblog">
+<meta name="twitter:image" content="https://i0.wp.com/www.codexworld.com/wp-content/uploads/2015/12/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png?fit=602%2C327">
+<meta name="twitter:creator" content="@codexworldblog">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="CodexWorld » Feed" href="http://www.codexworld.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="CodexWorld » Comments Feed" href="http://www.codexworld.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="CodexWorld » PayPal Payment Gateway Integration in CodeIgniter Comments Feed" href="http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/feed/">
+		<script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/analytics.js"></script><script type="text/javascript" async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/rtbspub"></script><script src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/ca-pub-5750766974376423.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.codexworld.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=fbf66bc04bc3b0655175db4efe038895"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="GoogleFonts-css" href="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/jquery.min.js"></script>
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/bootstrap.js"></script>
+<link rel="https://api.w.org/" href="http://www.codexworld.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.codexworld.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.codexworld.com/wp-includes/wlwmanifest.xml"> 
+<!--Theme by CodexWorld.com-->
+<link rel="shortlink" href="http://wp.me/p6bxIh-hw">
+<link rel="alternate" type="application/json+oembed" href="http://www.codexworld.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.codexworld.com%2Fpaypal-payment-gateway-integration-in-codeigniter%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.codexworld.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.codexworld.com%2Fpaypal-payment-gateway-integration-in-codeigniter%2F&amp;format=xml">
+
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style>    		<script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/adsbygoogle.js"></script>
+		<script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5750766974376423",
+            enable_page_level_ads: true
+          });
+        </script>
+	</head>
+
+<body class="post-template-default single single-post postid-1086 single-format-standard cat-8-id cat-72-id"><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_cksync_1" style="display: none !important;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource.html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_oxsync" style="display: none !important;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(1).html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_cksync_0" style="display: none !important;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(2).html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_beacons" style="display: none !important;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(3).html"></iframe>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.codexworld.com/" title="CodexWorld Programming Blog">
+                								<img src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/codexworld-logo.png" alt="CodexWorld">
+					  	
+               	</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                				<ul id="menu-navigation-menus" class="nav navbar-nav"><li id="menu-item-1571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown"><a title="Web Development Tutorials" href="http://www.codexworld.com/tutorials" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-102" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="PHP  tutorials" href="http://www.codexworld.com/php/">PHP</a></li>	<li id="menu-item-125" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="WordPress tutorials" href="http://www.codexworld.com/wordpress/">WordPress</a></li>	<li id="menu-item-285" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Drupal tutorials" href="http://www.codexworld.com/drupal/">Drupal</a></li>	<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="CodeIgniter  tutorials" href="http://www.codexworld.com/codeigniter/">CodeIgniter</a></li>	<li id="menu-item-344" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="CakePHP Tutorials" href="http://www.codexworld.com/cakephp/">CakePHP</a></li><!--.dropdown-->
+</ul>
+</li><li id="menu-item-1021" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="How to Guides on Web Development" href="http://www.codexworld.com/how-to/">How To</a></li><li id="menu-item-311" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="Tutorials Demos" href="http://demos.codexworld.com/">Demos</a></li><li id="menu-item-1953" class="menu-item menu-item-type-post_type_archive menu-item-object-deals"><a title="Deals, Discount, Coupon on Web Hosting, Themes, and Services" href="http://www.codexworld.com/deals/">Deals</a></li><li id="menu-item-1572" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Web Services" href="http://www.codexworld.com/web-services/">Services</a></li><li id="menu-item-1502" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://www.codexworld.com/support-us/">Support Us</a></li><li id="menu-item-1418" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="Free Online Web Tools" target="_blank" href="http://www.xwebtools.com/">Web Tools</a></li></ul>                <ul class="nav navbar-nav navbar-right">
+                	<form name="googleForm" action="http://www.codexworld.com/search" class="navbar-form navbar-left">
+                    <div class="nav-search-el">
+               		<button type="submit" class="btn"> <span class="glyphicon glyphicon-search search-icon"></span></button></div>
+                    <input name="q" id="q" type="text" class="search-input-box" placeholder="Search tutorials">
+                    </form>
+             	</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container --> 
+    </nav><ins class="adsbygoogle" data-adsbygoogle-status="done" style="display: none; width: auto; height: auto;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><iframe width="0" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(4).html"></iframe></ins></ins></ins>
+    <div class="bar-header"><script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/adsbygoogle.js"></script>
+<!-- HeaderTopAds -->
+<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="4802459696" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><iframe width="1200" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(5).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>	
+ 	<div class="container"><div class="row">
+	<div class="col-lg-8">
+	    	            <div class="breadcrumb"><a href="http://www.codexworld.com/" rel="nofollow">Home</a>&nbsp;&nbsp;»&nbsp;&nbsp;<a href="http://www.codexworld.com/tutorials/codeigniter/" rel="nofollow">CodeIgniter</a> • <a href="http://www.codexworld.com/tutorials/paypal/" rel="nofollow">PayPal</a> &nbsp;&nbsp;»&nbsp;&nbsp; PayPal Payment Gateway Integration in CodeIgniter</div>
+                <h1 class="single">PayPal Payment Gateway Integration in CodeIgniter</h1>
+        <hr class="postmeta">
+        <div class="post_comment_social">
+            <div class="post-meta">
+                <span>By: CodexWorld</span><span>In: <a href="http://www.codexworld.com/tutorials/codeigniter/" alt="CodeIgniter">CodeIgniter</a> » <a href="http://www.codexworld.com/tutorials/paypal/" alt="PayPal">PayPal</a></span><span>Last Updated:&nbsp;Feb 27, 2017            </span></div>
+            <div class="socialicons">
+                <span class="socialspace"><a href="javascript:void(0)" class="icon-fb" onclick="javascript:generic_social_share(&#39;http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.codexworld.com%2Fpaypal-payment-gateway-integration-in-codeigniter%2F&#39;)" title="Facebook"><i class="icon"></i>Share</a></span>
+                <span class="socialspace"><a href="javascript:void(0)" class="icon-tw" onclick="javascript:generic_social_share(&#39;http://twitter.com/share?text=PayPal Payment Gateway Integration in CodeIgniter&amp;url=http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/&#39;)" title="Twitter"><i class="icon"></i>Tweet</a></span>
+                <span class="socialspace secondary-shares"><a href="javascript:void(0)" onclick="javascript:generic_social_share(&#39;https://plus.google.com/share?url=http%3A%2F%2Fwww.codexworld.com%2Fpaypal-payment-gateway-integration-in-codeigniter%2F&#39;)" class="icon-gplus" title="Google"><i class="icon"></i></a></span>
+                <span class="socialspace secondary-shares"><a href="javascript:void(0)" class="icon-linked_in" onclick="javascript:generic_social_share(&#39;http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.codexworld.com%2Fpaypal-payment-gateway-integration-in-codeigniter%2F&#39;)"><i class="icon"></i></a></span>
+            </div>
+        </div>
+        <hr>
+        <div class="post_content">
+		        <p></p><p>PayPal is one of the world’s most popular internet payment solution. Many projects need a payment gateway for accepting payment. PayPal is the best choice for integrating payment gateway on your web project. After publishing <a href="http://www.codexworld.com/paypal-standard-payment-gateway-integration-php/">PayPal standard payment gateway integration in PHP</a>, many visitors sent us the request for <b>PayPal standard payment gateway integration in CodeIgniter</b>.</p>
+<div class="img_center"><a href="https://i0.wp.com/www.codexworld.com/wp-content/uploads/2015/12/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png"><img src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png" alt="paypal-payment-gateway-integration-in-codeigniter-by-codexworld" class="alignnone size-full wp-image-1087" srcset="https://i0.wp.com/www.codexworld.com/wp-content/uploads/2015/12/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png?w=602 602w, https://i0.wp.com/www.codexworld.com/wp-content/uploads/2015/12/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png?resize=300%2C163 300w, https://i0.wp.com/www.codexworld.com/wp-content/uploads/2015/12/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png?resize=200%2C109 200w, https://i0.wp.com/www.codexworld.com/wp-content/uploads/2015/12/paypal-payment-gateway-integration-in-codeigniter-by-codexworld.png?resize=346%2C188 346w" sizes="(max-width: 602px) 100vw, 602px" width="602" height="327"></a></div>
+<p>In this tutorial, we’ll give you the step by step guide on PayPal standard payment gateway integration for CodeIgniter. We’ll provide the full source code and using it you can easily integrate PayPal payment gateway in CodeIgniter.</p>
+<p>In this CodeIgniter application, we’ll display some products from the database along with the <b>Buy</b> button. Clicking on <b>Buy</b> button, the buyer would be redirected to the PayPal site. After completion of payment, the buyer will come back to the website. Using PayPal IPN (Instant Payment Notification) service, we will check the payment status and store the transaction details in the database.</p>
+<p>Before starting to integrate PayPal payment gateway in CodeIgniter, <a href="http://www.codexworld.com/creating-paypal-sandbox-test-account-website-payments-pro-account/">create a Sandbox test account</a> for testing PayPal transaction. You can get the Business account and Personal account from your Sandbox account.</p>
+<ul class="bullet_disk_list">
+<li><a href="http://www.codexworld.com/creating-paypal-sandbox-test-account-website-payments-pro-account/">Creating PayPal Sandbox Test Account and Website Payments Pro Account</a></li>
+</ul>
+<h2>Database Tables Creation</h2>
+<p>We’ll create two tables called <code>products</code> and <code>payments</code>.</p>
+<p><b>products</b><br>
+This table is used to store the products data with some basic information. <code>products</code> table SQL would like the below.</p>
+<pre><span style="color:#794938">CREATE</span> <span style="color:#794938">TABLE</span> `<span style="color:#bf4f24">products</span>` (
+ <span style="color:#0b6125">`id`</span> <span style="color:#a71d5d;font-style:italic">int</span>(<span style="color:#811f24;font-weight:700">11</span>) <span style="color:#794938">NOT NULL</span> AUTO_INCREMENT,
+ <span style="color:#0b6125">`name`</span> <span style="color:#a71d5d;font-style:italic">varchar</span>(<span style="color:#811f24;font-weight:700">255</span>) COLLATE utf8_unicode_ci <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`image`</span> <span style="color:#a71d5d;font-style:italic">varchar</span>(<span style="color:#811f24;font-weight:700">255</span>) COLLATE utf8_unicode_ci <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`price`</span> float(<span style="color:#811f24;font-weight:700">10</span>,<span style="color:#811f24;font-weight:700">2</span>) <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`status`</span> <span style="color:#a71d5d;font-style:italic">tinyint</span>(<span style="color:#811f24;font-weight:700">1</span>) <span style="color:#794938">NOT NULL</span> DEFAULT <span style="color:#0b6125">'1'</span>,
+ <span style="color:#a71d5d;font-style:italic">PRIMARY KEY</span> (<span style="color:#0b6125">`id`</span>)
+) ENGINE<span style="color:#794938">=</span>InnoDB DEFAULT CHARSET<span style="color:#794938">=</span>utf8 COLLATE<span style="color:#794938">=</span>utf8_unicode_ci;
+</pre>
+<p><b>payments</b><br>
+This table is used to store the transaction data. <code>payments</code> table SQL would like the below.</p>
+<pre><span style="color:#794938">CREATE</span> <span style="color:#794938">TABLE</span> `<span style="color:#bf4f24">payments</span>` (
+ <span style="color:#0b6125">`payment_id`</span> <span style="color:#a71d5d;font-style:italic">int</span>(<span style="color:#811f24;font-weight:700">11</span>) <span style="color:#794938">NOT NULL</span> AUTO_INCREMENT,
+ <span style="color:#0b6125">`user_id`</span> <span style="color:#a71d5d;font-style:italic">int</span>(<span style="color:#811f24;font-weight:700">11</span>) <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`product_id`</span> <span style="color:#a71d5d;font-style:italic">int</span>(<span style="color:#811f24;font-weight:700">11</span>) <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`txn_id`</span> <span style="color:#a71d5d;font-style:italic">varchar</span>(<span style="color:#811f24;font-weight:700">255</span>) COLLATE utf8_unicode_ci <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`payment_gross`</span> float(<span style="color:#811f24;font-weight:700">10</span>,<span style="color:#811f24;font-weight:700">2</span>) <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`currency_code`</span> <span style="color:#a71d5d;font-style:italic">varchar</span>(<span style="color:#811f24;font-weight:700">5</span>) COLLATE utf8_unicode_ci <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`payer_email`</span> <span style="color:#a71d5d;font-style:italic">varchar</span>(<span style="color:#811f24;font-weight:700">255</span>) COLLATE utf8_unicode_ci <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#0b6125">`payment_status`</span> <span style="color:#a71d5d;font-style:italic">varchar</span>(<span style="color:#811f24;font-weight:700">255</span>) COLLATE utf8_unicode_ci <span style="color:#794938">NOT NULL</span>,
+ <span style="color:#a71d5d;font-style:italic">PRIMARY KEY</span> (<span style="color:#0b6125">`payment_id`</span>)
+) ENGINE<span style="color:#794938">=</span>InnoDB DEFAULT CHARSET<span style="color:#794938">=</span>utf8 COLLATE<span style="color:#794938">=</span>utf8_unicode_ci;
+</pre>
+<h2>Controller Creation</h2>
+<p>We’ll create two controllers <code>Products</code> and <code>Paypal</code>. The functionalities of this two controllers are given below.</p>
+<p><b>Products:</b><br>
+This controller has two methods, <code>index()</code>, and <code>buy()</code>. <code>index()</code> method would display the products using the <code>product</code> model along with the <b>Buy</b> button. <code>buy()</code> method helps to generate the PayPal form and redirect buyer to the PayPal site once the <b>Buy</b> button is clicked.</p>
+<pre><span style="color: #0000BB">&lt;?php&nbsp;defined</span><span style="color: #007700">(</span><span style="color: #DD0000">'BASEPATH'</span><span style="color: #007700">)&nbsp;OR&nbsp;exit(</span><span style="color: #DD0000">'No&nbsp;direct&nbsp;script&nbsp;access&nbsp;allowed'</span><span style="color: #007700">);<br>class&nbsp;</span><span style="color: #0000BB">Products&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">CI_Controller<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">__construct</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">library</span><span style="color: #007700">(</span><span style="color: #DD0000">'paypal_lib'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">model</span><span style="color: #007700">(</span><span style="color: #DD0000">'product'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">index</span><span style="color: #007700">(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//get&nbsp;products&nbsp;data&nbsp;from&nbsp;database<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'products'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">product</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getRows</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//pass&nbsp;the&nbsp;products&nbsp;data&nbsp;to&nbsp;view<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">view</span><span style="color: #007700">(</span><span style="color: #DD0000">'products/index'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">buy</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Set&nbsp;variables&nbsp;for&nbsp;paypal&nbsp;form</span><span style="color: #FF8000"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$returnURL&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'paypal/success'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//payment&nbsp;success&nbsp;url<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cancelURL&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'paypal/cancel'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//payment&nbsp;cancel&nbsp;url<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$notifyURL&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'paypal/ipn'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//ipn&nbsp;url<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//get&nbsp;particular&nbsp;product&nbsp;data<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$product&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">product</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getRows</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$userID&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//current&nbsp;user&nbsp;id<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$logo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'assets/images/codexworld-logo.png'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add_field</span><span style="color: #007700">(</span><span style="color: #DD0000">'return'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$returnURL</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add_field</span><span style="color: #007700">(</span><span style="color: #DD0000">'cancel_return'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$cancelURL</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add_field</span><span style="color: #007700">(</span><span style="color: #DD0000">'notify_url'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$notifyURL</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add_field</span><span style="color: #007700">(</span><span style="color: #DD0000">'item_name'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$product</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add_field</span><span style="color: #007700">(</span><span style="color: #DD0000">'custom'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$userID</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add_field</span><span style="color: #007700">(</span><span style="color: #DD0000">'item_number'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">$product</span><span style="color: #007700">[</span><span style="color: #DD0000">'id'</span><span style="color: #007700">]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add_field</span><span style="color: #007700">(</span><span style="color: #DD0000">'amount'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">$product</span><span style="color: #007700">[</span><span style="color: #DD0000">'price'</span><span style="color: #007700">]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">image</span><span style="color: #007700">(</span><span style="color: #0000BB">$logo</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_auto_form</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</span></pre>
+<p><b>Paypal:</b><br>
+This controller has three methods, <code>success()</code>, <code>cancel()</code>, and <code>ipn()</code>. <code>success()</code> method responsible for displaying the transaction data on payment success. <code>cancel()</code> method is requested on payment cancel by the buyer. <code>ipn()</code> method gets the transaction data by PayPal IPN and insert the transaction data into the database.</p>
+<pre><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">if&nbsp;(&nbsp;!&nbsp;</span><span style="color: #0000BB">defined</span><span style="color: #007700">(</span><span style="color: #DD0000">'BASEPATH'</span><span style="color: #007700">))&nbsp;exit(</span><span style="color: #DD0000">'No&nbsp;direct&nbsp;script&nbsp;access&nbsp;allowed'</span><span style="color: #007700">);<br>class&nbsp;</span><span style="color: #0000BB">Paypal&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">CI_Controller&nbsp;<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">__construct</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">library</span><span style="color: #007700">(</span><span style="color: #DD0000">'paypal_lib'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">model</span><span style="color: #007700">(</span><span style="color: #DD0000">'product'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">success</span><span style="color: #007700">(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//get&nbsp;the&nbsp;transaction&nbsp;data<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$paypalInfo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'item_number'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">'item_number'</span><span style="color: #007700">];&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'txn_id'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"tx"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'payment_amt'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"amt"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'currency_code'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"cc"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'status'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"st"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//pass&nbsp;the&nbsp;transaction&nbsp;data&nbsp;to&nbsp;view<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">view</span><span style="color: #007700">(</span><span style="color: #DD0000">'paypal/success'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">cancel</span><span style="color: #007700">(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">view</span><span style="color: #007700">(</span><span style="color: #DD0000">'paypal/cancel'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">ipn</span><span style="color: #007700">(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//paypal&nbsp;return&nbsp;transaction&nbsp;details&nbsp;array<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$paypalInfo&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">post</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'user_id'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">'custom'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'product_id'</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"item_number"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'txn_id'</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"txn_id"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'payment_gross'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"mc_gross"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'currency_code'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"mc_currency"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'payer_email'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"payer_email"</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'payment_status'</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">[</span><span style="color: #DD0000">"payment_status"</span><span style="color: #007700">];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$paypalURL&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_url</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">paypal_lib</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">curlPost</span><span style="color: #007700">(</span><span style="color: #0000BB">$paypalURL</span><span style="color: #007700">,</span><span style="color: #0000BB">$paypalInfo</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//check&nbsp;whether&nbsp;the&nbsp;payment&nbsp;is&nbsp;verified<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">"/VERIFIED/i"</span><span style="color: #007700">,</span><span style="color: #0000BB">$result</span><span style="color: #007700">)){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//insert&nbsp;the&nbsp;transaction&nbsp;data&nbsp;into&nbsp;the&nbsp;database<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">product</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insertTransaction</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</span></pre>
+<h2>Model (Product) Creation</h2>
+<p>Product model has two methods, <code>getRows()</code> and <code>insertTransaction()</code>. <code>getRows()</code> method is used to fetch the product data from the <code>products</code> table of the database. <code>insertTransaction()</code> method is used to insert the transaction data in into the <code>payments</code> table of the database.</p>
+<pre><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">if&nbsp;(&nbsp;!&nbsp;</span><span style="color: #0000BB">defined</span><span style="color: #007700">(</span><span style="color: #DD0000">'BASEPATH'</span><span style="color: #007700">))&nbsp;exit(</span><span style="color: #DD0000">'No&nbsp;direct&nbsp;script&nbsp;access&nbsp;allowed'</span><span style="color: #007700">);<br>class&nbsp;</span><span style="color: #0000BB">Product&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">CI_Model</span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//get&nbsp;and&nbsp;return&nbsp;product&nbsp;rows<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">getRows</span><span style="color: #007700">(</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">select</span><span style="color: #007700">(</span><span style="color: #DD0000">'id,name,image,price'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">from</span><span style="color: #007700">(</span><span style="color: #DD0000">'products'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$id</span><span style="color: #007700">){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">(</span><span style="color: #DD0000">'id'</span><span style="color: #007700">,</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">row_array</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">order_by</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">,</span><span style="color: #DD0000">'asc'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">result_array</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;!empty(</span><span style="color: #0000BB">$result</span><span style="color: #007700">)?</span><span style="color: #0000BB">$result</span><span style="color: #007700">:</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//insert&nbsp;transaction&nbsp;data<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">insertTransaction</span><span style="color: #007700">(</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array()){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$insert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(</span><span style="color: #DD0000">'payments'</span><span style="color: #007700">,</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$insert</span><span style="color: #007700">?</span><span style="color: #0000BB">true</span><span style="color: #007700">:</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</span></pre>
+<h2>View Creation</h2>
+<p>Into the views directory, we’ll create two folders called <b>products</b> and <b>paypal</b>. <code>products/</code> holds the view file of the <b>Products</b> controller and <code>paypal/</code> holds the view files of <b>Paypal</b> controller.</p>
+<p><b>products:</b><br>
+This directory has only one view file (index.php). This file holds the HTML for all the products listing. </p>
+<pre>&lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"row"</span>&gt;
+    <span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">if(!empty(</span><span style="color: #0000BB">$products</span><span style="color: #007700">)):&nbsp;foreach(</span><span style="color: #0000BB">$products&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$product</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">?&gt;</span>
+    &lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"thumbnail"</span>&gt;
+        &lt;<span style="color:#bf4f24">img</span> <span style="color:#bf4f24">src</span>=<span style="color:#0b6125">"<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'assets/images/'</span><span style="color: #007700">.</span><span style="color: #0000BB">$product</span><span style="color: #007700">[</span><span style="color: #DD0000">'image'</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span>"</span> <span style="color:#bf4f24">alt</span>=<span style="color:#0b6125">""</span>&gt;
+        &lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"caption"</span>&gt;
+            &lt;<span style="color:#bf4f24">h4</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"pull-right"</span>&gt;$<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$product</span><span style="color: #007700">[</span><span style="color: #DD0000">'price'</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span> USD&lt;/<span style="color:#bf4f24">h4</span>&gt;
+            &lt;<span style="color:#bf4f24">h4</span>&gt;&lt;<span style="color:#bf4f24">a</span> <span style="color:#bf4f24">href</span>=<span style="color:#0b6125">"javascript:void(0);"</span>&gt;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$product</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span>&lt;/<span style="color:#bf4f24">a</span>&gt;&lt;/<span style="color:#bf4f24">h4</span>&gt;
+        &lt;/<span style="color:#bf4f24">div</span>&gt;
+        &lt;<span style="color:#bf4f24">a</span> <span style="color:#bf4f24">href</span>=<span style="color:#0b6125">"<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">().</span><span style="color: #DD0000">'products/buy/'</span><span style="color: #007700">.</span><span style="color: #0000BB">$product</span><span style="color: #007700">[</span><span style="color: #DD0000">'id'</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span>"</span>&gt;&lt;<span style="color:#bf4f24">img</span> <span style="color:#bf4f24">src</span>=<span style="color:#0b6125">"<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">base_url</span><span style="color: #007700">();&nbsp;</span><span style="color: #0000BB">?&gt;</span>assets/images/x-click-but01.gif"</span> <span style="color:#bf4f24">style</span>=<span style="color:#0b6125">"width: 70px;"</span>&gt;&lt;/<span style="color:#bf4f24">a</span>&gt;
+    &lt;/<span style="color:#bf4f24">div</span>&gt;
+    <span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">endforeach;&nbsp;endif;&nbsp;</span><span style="color: #0000BB">?&gt;</span>
+&lt;/<span style="color:#bf4f24">div</span>&gt;</pre>
+<p><b>paypal:</b><br>
+This directory has two view file, <code>success.php</code> and <code>cancel.php</code>.<br>
+The <code>success.php</code> file holds the HTML for displaying the transaction success notification.</p>
+<pre>&lt;<span style="color:#bf4f24">div</span>&gt;
+    &lt;<span style="color:#bf4f24">h2</span>&gt;Dear Member&lt;/<span style="color:#bf4f24">h2</span>&gt;
+    &lt;<span style="color:#bf4f24">span</span>&gt;Your payment was successful, thank you for purchase.&lt;/<span style="color:#bf4f24">span</span>&gt;&lt;<span style="color:#bf4f24">br</span>/&gt;
+    &lt;<span style="color:#bf4f24">span</span>&gt;Item Number : 
+        &lt;<span style="color:#bf4f24">strong</span>&gt;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$item_number</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>&lt;/<span style="color:#bf4f24">strong</span>&gt;
+    &lt;/<span style="color:#bf4f24">span</span>&gt;&lt;<span style="color:#bf4f24">br</span>/&gt;
+    &lt;<span style="color:#bf4f24">span</span>&gt;TXN ID : 
+        &lt;<span style="color:#bf4f24">strong</span>&gt;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$txn_id</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>&lt;/<span style="color:#bf4f24">strong</span>&gt;
+    &lt;/<span style="color:#bf4f24">span</span>&gt;&lt;<span style="color:#bf4f24">br</span>/&gt;
+    &lt;<span style="color:#bf4f24">span</span>&gt;Amount Paid : 
+        &lt;<span style="color:#bf4f24">strong</span>&gt;$<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$payment_amt</span><span style="color: #007700">.</span><span style="color: #DD0000">'&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$currency_code</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>&lt;/<span style="color:#bf4f24">strong</span>&gt;
+    &lt;/<span style="color:#bf4f24">span</span>&gt;&lt;<span style="color:#bf4f24">br</span>/&gt;
+    &lt;<span style="color:#bf4f24">span</span>&gt;Payment Status : 
+        &lt;<span style="color:#bf4f24">strong</span>&gt;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$status</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>&lt;/<span style="color:#bf4f24">strong</span>&gt;
+    &lt;/<span style="color:#bf4f24">span</span>&gt;&lt;<span style="color:#bf4f24">br</span>/&gt;
+&lt;/<span style="color:#bf4f24">div</span>&gt;</pre>
+<p>The <code>cancel.php</code> file holds the HTML for displaying the transaction cancel notification.</p>
+<pre>&lt;<span style="color:#bf4f24">div</span>&gt;
+    &lt;<span style="color:#bf4f24">h3</span>&gt;Dear Member&lt;/<span style="color:#bf4f24">h3</span>&gt;
+    &lt;<span style="color:#bf4f24">p</span>&gt;We are sorry! Your last transaction was cancelled.&lt;/<span style="color:#bf4f24">p</span>&gt;
+&lt;/<span style="color:#bf4f24">div</span>&gt;</pre>
+<h2>Library Creation</h2>
+<p>We’ll use the <code>paypal_lib</code> library for generating the PayPal form and submit the form to PayPal. This library has a dependency of a config file called <code>paypallib_config.php</code>. <code>paypal_lib.php</code> file will be placed in the <code>application/libraries/</code> directory and <code>paypallib_config.php</code> file will be placed in the <code>application/config/</code> directory.</p>
+<ul class="bullet_disk_list">
+<li>View or download the <code>paypallib_config.php</code> and <code>paypal_lib.php</code> file from github – <a href="https://github.com/codexworld/paypal-library-for-codeigniter.git" title="Click to download PayPal library" target="_blank">paypal-library-for-codeigniter</a></li>
+</ul>
+<p class="note-text">Don’t forget to insert your PayPal business email in the <code>paypal_config.php</code> file.</p>
+<h2>Load Database</h2>
+<p>Don’t forget to load database library to using the database connectivity. With two ways you can load the database library.</p>
+<ul class="step_list">
+<li>You can load it manually by this line of code – <code>$this-&gt;load-&gt;database();</code></li>
+<p><b>Or</b></p>
+<li>You can load it automatically in the application/config/autoload.php file by adding this line of code – <code>$autoload['libraries'] = array('database');</code></li>
+</ul>
+<h2>Test PayPal Transaction</h2>
+<p><span class="glyphicon glyphicon-forward"></span>&nbsp;Open the Products controller (<code>http://localhost/codeigniter/products</code>) at the browser.<br>
+<span class="glyphicon glyphicon-forward"></span>&nbsp;You’ll see the products are listed with the <b>Buy</b> button.<br>
+<span class="glyphicon glyphicon-forward"></span>&nbsp;Click on the <b>Buy</b> button and you would be redirected to the PayPal site for payment.<br>
+<span class="glyphicon glyphicon-forward"></span>&nbsp;Log into the PayPal with your Sandbox personal account and click on Pay.<br>
+<span class="glyphicon glyphicon-forward"></span>&nbsp;On payment success, you would be redirected to the website’s success page and you’ll see the payment details.</p>
+<h2>Make PayPal Payment Gateway Live</h2>
+<p>Once your test transaction is worked properly with the PayPal sandbox account, now it time to link your live PayPal account. You only need to make two changes for that. Open the <code>application/config/paypallib_config.php</code> and change the following two configuration value.</p>
+<ul class="bullet_disk_list">
+<li>Change the SANDBOX environment to FALSE for make PayPal payment gateway live.
+<pre><span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span style="color: #DD0000">'sandbox'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">;</span></pre>
+</li>
+<li>Change the BUSINESS EMAIL with your live PayPal business email.
+<pre><span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span style="color: #DD0000">'business'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'live_business@email.com'</span><span style="color: #007700">;</span></pre>
+</li>
+<p></p>
+                <div class="img_center demo-links" id="ProjectDemoDownload">
+		<a id="DownloadProject" class="btn_link green" href="http://www.codexworld.com/downloads/paypal-payment-gateway-integration-in-codeigniter"><i class="glyphicon glyphicon-download"></i>Download Source Code</a>        </div>
+                </ul></div>
+        <div class="details-page-ad-bottom"><script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/adsbygoogle.js"></script>
+<!-- PageBottomRectangle -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5750766974376423" data-ad-slot="2412776099" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(6).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        <!-- Author Box Start -->
+        		<!-- Author Box end -->
+                <div class="codex-end">
+            <div class="article-nav">
+                <div class="article-nav__link-container article-nav__prev">
+                                        <a class="article-nav__link" title="Drupal 8 Installation and Configuration Tutorial" href="http://www.codexworld.com/drupal-8-installation-configuration-tutorial/">
+                        <div class="article-nav__link-text-container"><span class="article-nav__subtitle">Previous</span>
+                        <div class="article-nav__row">
+                            <div class="article-nav__icon"><i class="glyphicon glyphicon-arrow-left"></i></div>
+                            <div class="article-nav__link-title">Drupal 8 Installation and Configuration Tutorial</div>
+                        </div>
+                        </div>
+                    </a>
+                                    </div>
+                <div class="article-nav__link-container article-nav__next">
+                                        <a class="article-nav__link" title="WordPress - How to Display Most Popular Posts by Views" href="http://www.codexworld.com/wordpress-how-to-display-most-popular-posts-by-views/">
+                        <div class="article-nav__link-text-container"><span class="article-nav__subtitle">Next</span>
+                        <div class="article-nav__row">
+                            <div class="article-nav__link-title">WordPress - How to Display Most Popular Posts by Views</div>
+                            <div class="article-nav__icon"><i class="glyphicon glyphicon-arrow-right"></i></div>
+                        </div>
+                        </div>
+                    </a>
+                                    </div>
+            </div>
+        </div>
+    
+    
+        <div class="recomend-head"><h4>Recommended Tutorials For You</h4></div>
+        <div class="bar-content">
+		<script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/adsbygoogle.js"></script>
+        <!-- CodexWorldMatchedContent -->
+        <ins class="adsbygoogle" style="display: block; height: 503px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="2166452094" data-ad-format="autorelaxed" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:503px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:503px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><iframe width="839" height="503" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(7).html"></iframe></ins></ins></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div>
+<div class="bar-footer"><script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/adsbygoogle.js"></script>
+<!-- FooterLinksRenponsive -->
+<ins class="adsbygoogle" style="display: block; height: 30px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="2211144895" data-ad-format="link" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:30px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:30px;margin:0;padding:0;position:relative;visibility:visible;width:839px;background-color:transparent"><iframe width="839" height="30" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(8).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>    
+        <!-- You can start editing here. -->
+<div class="total-comments comment-respond"><h2><span class="comment-count">63 Comments</span></h2></div>
+<div id="comments">
+	<ol class="commentlist clearfix">
+			<li class="comment even thread-even depth-1" id="li-comment-41793">
+		<div id="comment-41793" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Daniel Masih Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p></p><p>thankyou very much for you tutorial</p>
+<p></p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>March 2, 2017 at 7:52 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-41500">
+		<div id="comment-41500" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Janen R Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p></p><p>You are Great Mr.codexworld. You are always getting the need of mine.not only me,those who all needs the clear explanations and understandings</p>
+<p></p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>February 25, 2017 at 6:48 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-41103">
+		<div id="comment-41103" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Vicky Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p></p><p>How we can add money back into paypal account.</p>
+<p></p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>February 16, 2017 at 6:59 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<!-- #comment-## -->
+	</ol>
+</div>
+<div class="commentPagination">
+<a class="prev page-numbers" href="http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/comment-page-2/#comments">« PREV</a>
+<a class="page-numbers" href="http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/comment-page-1/#comments">1</a>
+<a class="page-numbers" href="http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/comment-page-2/#comments">2</a>
+<span class="page-numbers current">3</span></div>
+<div id="respond" class="comment-respond page-content clearfix">
+    <div class="boxedtitle page-title"><h2>Leave a reply</h2></div>
+    	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.codexworld.com/paypal-payment-gateway-integration-in-codeigniter/#respond" style="display:none;">Cancel</a></small></h3>			<form action="http://www.codexworld.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<div id="respond-textarea"><p class="comment-form-comment"><label class="required" for="comment">Comment<span>*</span></label><textarea id="comment" name="comment" cols="58" rows="8" aria-required="true" required=""></textarea></p></div><div id="respond-inputs" class="clearfix"><p>
+                  <label class="required" for="author">Your Name<span>*</span></label>
+									<input id="author" name="author" type="text" value="" size="" aria-required="true" required=""></p>
+<p>
+                  <label class="required" for="email">Your Email<span>*</span></label>
+									<input id="email" name="email" type="text" value="" size="" aria-required="true" required=""></p>
+<p class="last">
+                  <label class="required" for="url">Your Website</label>
+									<input id="url" name="url" type="text" value="" size="">
+									</p></div>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="1086" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="58ef0efc2d"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1489064720730"></form>
+			</div><!-- #respond -->
+	</div>
+
+                                
+	</div>
+<div class="col-lg-4">
+<div class="well widget-sidebar"><h4>CONNECT WITH CODEXWORLD</h4><div class="news_box social-icons-leftsidebar"><p>Subscribe CodexWorld updates via email and get every new post delivered to your inbox.</p>    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://feedburner.google.com/fb/a/mailverify?uri=codexworld&#39;, &#39;popupwindow&#39;, &#39;scrollbars=no,width=550,height=520&#39;);return true;">
+        <input name="email" type="text" placeholder="Enter email address">
+        <input type="hidden" value="codexworld" name="uri">
+		<input type="hidden" name="loc" value="en_US">
+        <button class="search_submit" type="submit">Subscribe</button>
+    </form>
+    
+    <ul><li class="facebook"><a href="https://www.facebook.com/codexworld" target="_blank">Facebook</a></li><li class="twitter"><a href="https://twitter.com/codexworldblog" target="_blank">Twitter</a></li><li class="googleplus"><a href="https://plus.google.com/+codexworld" target="_blank">Google+</a></li><li class="linkedin"><a href="https://www.linkedin.com/company/codexworld" target="_blank">LinkedIN</a></li><li class="pinterest"><a href="https://www.pinterest.com/codexworld" target="_blank">Pinterest</a></li><li class="youtube"><a href="https://www.youtube.com/codexworld" target="_blank">YouTube</a></li><li class="rss"><a href="http://feeds.feedburner.com/codexworld" target="_blank">RSS Feed</a></li></ul></div></div><div class="well widget-sidebar adsense_widget"><script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/adsbygoogle.js"></script>
+<!-- RightSidebar300x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5750766974376423" data-ad-slot="6237639296" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_5_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(9).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="well widget-sidebar"><h4>TRENDING TUTORIALS</h4><div class="textwidget popular_post_widget"><ul>  <li><a title="Login with Facebook using PHP" href="http://www.codexworld.com/login-with-facebook-using-php/">Login with Facebook using PHP</a></li>
+    <li><a title="Drag and Drop Reorder Images using jQuery, Ajax, PHP &amp; MySQL" href="http://www.codexworld.com/drag-drop-images-reorder-using-jquery-ajax-php-mysql/">Drag and Drop Reorder Images using jQuery, Ajax, PHP &amp; MySQL</a></li>
+    <li><a title="Login with Google Account using PHP" href="http://www.codexworld.com/login-with-google-api-using-php/">Login with Google Account using PHP</a></li>
+    <li><a title="PayPal Standard Payment Gateway Integration in PHP" href="http://www.codexworld.com/paypal-standard-payment-gateway-integration-php/">PayPal Standard Payment Gateway Integration in PHP</a></li>
+    <li><a title="Add Remove input fields dynamically using jQuery" href="http://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/">Add Remove input fields dynamically using jQuery</a></li>
+    <li><a title="Upload multiple images using jQuery, Ajax and PHP" href="http://www.codexworld.com/upload-multiple-images-using-jquery-ajax-php/">Upload multiple images using jQuery, Ajax and PHP</a></li>
+    <li><a title="CodeIgniter Tutorial for Beginners" href="http://www.codexworld.com/codeigniter-tutorial-beginners-learn-codeigniter-scratch/">CodeIgniter Tutorial for Beginners</a></li>
+    <li><a title="Login with Twitter using PHP" href="http://www.codexworld.com/login-with-twitter-using-php/">Login with Twitter using PHP</a></li>
+  </ul></div></div><div class="well widget-sidebar adsense_widget"><script async="" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/adsbygoogle.js"></script>
+<!-- RightSidebarResponsive -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-5750766974376423" data-ad-slot="4435324496" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:405px;background-color:transparent"><ins id="aswift_6_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:405px;background-color:transparent"><iframe width="405" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(10).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="well widget-sidebar"><h4>TOPICS</h4><div class="row textwidget tabCategory"><ul class="list-unstyled">  <li><a title="CakePHP" href="http://www.codexworld.com/tutorials/cakephp/">CakePHP</a></li>
+    <li><a title="CodeIgniter" href="http://www.codexworld.com/tutorials/codeigniter/">CodeIgniter</a></li>
+    <li><a title="Drupal" href="http://www.codexworld.com/tutorials/drupal/">Drupal</a></li>
+    <li><a title="Facebook" href="http://www.codexworld.com/tutorials/facebook/">Facebook</a></li>
+    <li><a title="GoogleAPI" href="http://www.codexworld.com/tutorials/googleapi/">GoogleAPI</a></li>
+    <li><a title="GoogleMap" href="http://www.codexworld.com/tutorials/googlemap/">GoogleMap</a></li>
+    <li><a title="htaccess" href="http://www.codexworld.com/tutorials/htaccess/">htaccess</a></li>
+    <li><a title="HTML&amp;CSS" href="http://www.codexworld.com/tutorials/html-css/">HTML&amp;CSS</a></li>
+    <li><a title="HTML5" href="http://www.codexworld.com/tutorials/html5/">HTML5</a></li>
+    <li><a title="JavaScript" href="http://www.codexworld.com/tutorials/javascript/">JavaScript</a></li>
+    <li><a title="Magento" href="http://www.codexworld.com/tutorials/magento/">Magento</a></li>
+    <li><a title="MySQL" href="http://www.codexworld.com/tutorials/mysql/">MySQL</a></li>
+    <li><a title="PayPal" href="http://www.codexworld.com/tutorials/paypal/">PayPal</a></li>
+    <li><a title="PHP" href="http://www.codexworld.com/tutorials/php/">PHP</a></li>
+    <li><a title="Social Media" href="http://www.codexworld.com/tutorials/social-media/">Social Media</a></li>
+    <li><a title="Twitter" href="http://www.codexworld.com/tutorials/twitter/">Twitter</a></li>
+    <li><a title="Ubuntu" href="http://www.codexworld.com/tutorials/ubuntu/">Ubuntu</a></li>
+    <li><a title="Web Development" href="http://www.codexworld.com/tutorials/web-development/">Web Development</a></li>
+    <li><a title="WordPress" href="http://www.codexworld.com/tutorials/wordpress/">WordPress</a></li>
+  </ul></div></div><div class="well widget-sidebar"><h4>LATEST HOW TO GUIDES</h4><div class="textwidget latest_howto_widget"><ul>  <li><a title="How to Monitor Ajax Requests in Chrome" href="http://www.codexworld.com/how-to/monitor-ajax-requests-google-chrome/">How to Monitor Ajax Requests in Chrome</a></li>
+    <li><a title="How to Make Phone Number Clickable on Mobile Devices" href="http://www.codexworld.com/how-to/make-phone-number-clickable-hyperlink-mobile-devices/">How to Make Phone Number Clickable on Mobile Devices</a></li>
+    <li><a title="How to Disable Click Event using jQuery" href="http://www.codexworld.com/how-to/disable-click-event-jquery/">How to Disable Click Event using jQuery</a></li>
+    <li><a title="How to Filter Array by Value in PHP" href="http://www.codexworld.com/how-to/php-filter-array-by-value/">How to Filter Array by Value in PHP</a></li>
+    <li><a title="How to Calculate Age from Date of Birth in PHP" href="http://www.codexworld.com/how-to/calculate-age-from-date-of-birth-php/">How to Calculate Age from Date of Birth in PHP</a></li>
+  </ul></div></div><div class="well widget-sidebar adsense_widget adsSt_widget"><script id="mNCC" language="javascript">
+   medianet_width = "300";
+   medianet_height = "250";
+   medianet_crid = "730592212";
+   medianet_versionId = "111299";
+   (function() {
+       var isSSL = 'https:' == document.location.protocol;
+       var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU8XQ5IB' + (isSSL ? '&https=1' : '');
+       document.write('<scr' + 'ipt type="text/javascript" id="mNSC" src="' + mnSrc + '"></scr' + 'ipt>');
+   })();
+</script><script type="text/javascript" id="mNSC" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/nmedianet.js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_openx_730592212" style="display: none;" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(11).html"></iframe><script language="javascript" type="text/javascript" id="_mN_dy_730592212" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/fcmdynet.js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="250" width="100%" id="_mN_main_730592212_0_n" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/saved_resource(12).html"></iframe></div></div></div>
+</div>
+<footer class="footer" role="contentinfo">
+	<div class="footer_info">
+    	<div class="wrapper"> 
+        	        Copyright © 2017 <a href="http://www.codexworld.com/" title="Programming Blog, Web Development, Tutorials, PHP, MySQL, jQuery, Ajax, WordPress, Drupal, CodeIgniter, CakePHP and Demos">CodexWorld</a>. All rights reserved.
+            &nbsp;&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/cc-by-nc-nd.png"></a>
+        	<ul>
+            	<li><a href="http://www.codexworld.com/about-us" title="About Us">About Us</a></li>
+                <li class="sep">|</li>
+                <li><a href="http://www.codexworld.com/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                <li class="sep">|</li>
+                <li><a href="http://www.codexworld.com/terms-conditions" title="Terms and Conditions">Terms &amp; Conditions</a></li>
+                <li class="sep">|</li>
+            	<li><a href="http://www.codexworld.com/write-for-us" title="Write For Us">Write For Us</a></li>
+                <li class="sep">|</li>
+            	<li><a href="http://www.codexworld.com/advertise" title="Advertise on CodexWorld">Advertise</a></li>
+                <li class="sep">|</li>
+            	<li><a href="http://www.codexworld.com/contact" title="Contact">Contact</a></li>
+         	</ul>
+     	</div>
+  	</div> 
+</footer>
+<a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/form.js"></script>
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/photon.js"></script>
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/e-201710.js" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.7',blog:'91409221',post:'1086',tz:'0',srv:'www.codexworld.com'} ]);
+	_stq.push([ 'clickTrackerInit', '91409221', '1086' ]);
+</script>
+<script type="text/javascript" async="">function generic_social_share(url){window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');return true;}</script>
+<script type="text/javascript" async="">
+jQuery(document).ready(function(){
+    var stbox = jQuery(".adsSt_widget");
+    var stt = stbox.offset().top;
+    jQuery(document).scroll(function(){
+        var sta = jQuery(this).scrollTop();
+        if(sta > stt){
+            stbox.css({position:"fixed",top:40});
+        }else{
+            stbox.removeAttr("style");
+        }
+    });
+});
+</script>
+<script async="">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-55035394-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript" async="">
+jQuery(document).ready(function(){ jQuery(window).scroll(function(){ if (jQuery(this).scrollTop() > 100) { jQuery('#scroll').fadeIn(); } else { jQuery('#scroll').fadeOut(); } }); jQuery('#scroll').click(function(){ jQuery("html, body").animate({ scrollTop: 0 }, 600); return false; }); });
+</script>
+
+
+
+<!-- Dynamic page generated in 0.563 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-03-09 12:55:07 -->
+
+<!-- Compression = gzip --><img src="./PayPal Payment Gateway Integration in CodeIgniter - CodexWorld_files/g.gif" alt=":)" width="6" height="5" id="wpstats"></body></html>

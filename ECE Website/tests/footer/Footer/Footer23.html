@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- By B121212-->
+<html>
+<head>
+<title>Footer</title>
+        <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+        <script src="../semantic/jquery.min.js"></script>
+        <script src="../semantic/dist/semantic.min.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">     
+        <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+       <script type="text/javascript" src="../materialize/js/jquery-2.1.1.min.js"></script>           
+      <script src="../materialize/js/materialize.min.js"></script>    
+      <script type="text/javascript" src="../materialize/js/jquery.leanModal.min.js"></script>
+     <script type="text/javascript" src="../materialize/js/materialize.js"></script>      
+     <script type="text/javascript">
+      function displayName(){
+        alert("Successs");
+      }
+     </script>
+
+</head>
+<style>
+ .email{
+  min-height: 0px;
+  max-height: 16px;
+}
+</style>
+<body>
+	
+	<footer>
+	<div style="background-color:gray"
+	  <figure>
+	  <img src="e.jpg" align="middle" height="1050" width="1300"/>
+	  </figure>
+  		  		<div class="ui grid">
+  		  		
+  		  		<div class="row">
+  		  		<div class="two wide column"></div>
+  				<div class="four wide column"><font color="#FFFFFF"><i class="facebook icon"></i></font><a href="#" ><font color="white"><strong>Like our page</strong></font></a></div>
+  				<div class="four wide column"><a class="modal-trigger" href="#modal2"><font color="#932610"><i class="users icon"></i></font><font color="white"><strong>About Us</strong></font></a></div>
+ 				<div class="four wide column"><a class="modal-trigger" href="#modal1"><font color="green"><i class="call square icon"></i></font><font color="white"><strong>Contact Us</strong></font></a>
+				<div class="two wide column"></div>
+ 				</div>
+ 				</div>
+
+        <div id="modal1" class="modal">
+        <div class="modal-content">
+        <h4>Contact Details</h4>
+        <p>Ragiv Gandhi University Knowledge of Technologies Basar <br>Adilabad<br>504107</p>
+        </div>
+        </div>
+
+        <div id="modal2" class="modal">
+        <div class="modal-content">
+        <h4>About Us</h4>
+        <p>Pawan Kalyan <br>Pawanism<br>jana sena</p>
+        </div>
+        </div>
+        <form action="http://send.php">
+       <div id="modal3" class="modal">
+        <div class="modal-content">
+          <form class="col s12">
+          <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" data-length="1000"></textarea>
+            <label for="textarea1">Feedback</label>
+            <font size="3" ><input type="submit" class="send" name="send" value="Send"/></font>
+          </div>
+        </div>
+      </form>
+        </div>
+        </div>
+        </form>
+        <form action="http://send1.php">
+        <div id="modal4" class="modal">
+        <div class="modal-content">
+               <div class="row">
+               <div class="input-field col s12">
+                  <input placeholder="Email" id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                  <div class="row">
+                   <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea" data-length="1000"></textarea>
+            <label for="textarea1">Describe Your Problem</label>
+            <font size="3" ><input type="submit" class="send" name="send" value="Send"/></font>
+               </div>
+               </div>
+               </div>
+            </div>
+        </div>
+        </div>
+        </form>
+ 				<div class="row">
+ 				<div class="two wide column"></div>
+ 				<div class="four wide column"><a href="#" ><font color="#00aced"><i class="twitter icon"></i></font><font color="white"><strong>Follow Us</strong></font></a></div>
+  				<div class="four wide column"><a class="modal-trigger" href="#modal3"><font color="white"><strong><i class="send icon"></i>Feedback</strong></font></a></div>
+  				<div class="four wide column"><a class="modal-trigger" href="#modal4"><font color="##002259"><i class="help circle icon"></i></font><font color="white"><strong>Support</strong></font></a></div>
+  				<div class="two wide column"></div>
+  				</div>
+  				<div class="row">
+  				<div class="two wide column"></div>
+  				<div class="four wide column"><font color="#d34836"><i class="google plus icon"></i></font><a href="#" ><font color="white"><strong>Connect with Us</strong></font></a></div>
+  				<form action="http://subscribe.php">
+  				<div class="three wide column">
+  				<div class="ui right labeled input">
+          <input class="email" placeholder="E-mail" type="email">
+          <div><button class="ui blue button"><a href="subscribe.php"><font color="white">Subscribe</font></a></button></div>
+          </div></div></div></div></form>
+          		 <div class="ui grid">
+                <div class="row">
+                <div class="six wide column"></div>
+                <div class="seven wide column"><p><font color="white" size="2"><strong><i class="copyright icon"></i>Copyright 2017 Dept.of ECE @ RGUKT-BASAR TG 504107</strong></font><a href="#" ><font color="white">   <font color="black"><i class="sitemap icon"></i></font> SiteMap</font></a></p></div>  
+              </div>
+              </div>
+        </div>
+
+          
+
+        </footer>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#modal1').modal();
+    $('#modal2').modal();
+    $('#modal3').modal();
+    $('#modal4').modal();
+    $('input#input_text, textarea#textarea1').characterCounter();
+  });
+ </script>
+
+</body>
+</html>
+
+<!--
+           -->

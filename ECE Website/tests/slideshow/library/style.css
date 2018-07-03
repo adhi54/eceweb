@@ -1,0 +1,14 @@
+/* code by www.voidcanvas.com */
+
+#textDiv{
+  
+}
+
+#textDiv span{
+  display:inline-block;
+  position:relative;
+  visibility:hidden;
+  font-size:20px;
+  -webkit-font-smoothing:antialiased;
+}
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:green;
+}
+li {
+	float:left;
+}
+
+li a {
+	display:block;
+	color:white;
+	text-align:center;
+	padding:20px;
+}
+
+</style>
+<link rel="stylesheet" href="/ECE/includes/semantic/dist/semantic.css"/>
+<script type="text/javascript" src="/ECE/includes/semantic/jquery.min.js"></script>
+<script type="text/javascript" src="/ECE/includes/semantic/dist/semantic.js"></script>
+
+</head>
+
+<body>
+<ul>
+	<li><a href="#home">Home</a></li>
+	<li><a href="#first">first</a></li>
+	<li><a href="#secound">secound</a></li>
+	<li><a href="#third">third</a></li>
+</ul>
+
+<div class="ui width aligned padded grid">
+	<div class="row">
+		<button class="ui primary massive button exam">
+	 	first
+		</button>
+	<div class="column">
+	</div>
+		<button class="ui primary massive button exam">
+	  	second
+		</button>
+	</div>
+
+	<div class="row">
+		<button class="ui primary massive button exam">
+	 	 third
+		</button>
+		<div class="column">
+		</div>
+		<button class="ui primary massive button exam">
+	  	fourth
+		</button>
+	</div>
+</div>
+
+<div class="ui top attached tabular menu">
+  <a class="active item" data-tab="first">First</a>
+  <a class="item" data-tab="second">Second</a>
+  <a class="item" data-tab="third">Third</a>
+</div>
+<div class="ui bottom attached active tab segment" data-tab="first">
+  First
+</div>
+<div class="ui bottom attached tab segment" data-tab="second">
+  Second
+</div>
+<div class="ui bottom attached tab segment" data-tab="third">
+  Third
+</div>
+<script>
+$(document).ready(function(){
+    $('.tabular.menu .item').tab({history:false});
+});
+</script>
+</body>
+</html>
